@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>David Mihai</title>
+<link rel="icon" type="image/png" href="favicon-test.png">
+        
+<style>
+        @keyframes fade-in{
+            0%{
+            opacity: 0;
+            }
+            100%{
+            opacity: 1;
+            }
+          }
+
+        @keyframes opacity{
+            0%{opacity: 0%;}
+            100%{opacity: 100%;}}
+
+        @keyframes loader{
+            0%{
+                opacity: 100%;
+            }
+            90%{
+              opacity: 100%;
+            }
+            100%{
+                opacity: 0%;
+                }
+              }
+      /* :root {
+      color-scheme: light dark;
+      } */
+    html {
+    /* color-scheme: light dark; */
+    animation: opacity 0.6s ease-in-out;       
+    /* background-color: light-dark(whitesmoke, rgb(27, 27, 27));  */
+    /* background-color: red; */
+    }
+    *{
+    box-sizing: border-box;
+    }
+    body{
+    /* color-scheme: light dark; */
+    background-color: whitesmoke;
+    /* background-color: light-dark(whitesmoke, rgb(22, 22, 22)); */
+    /* height: 120vh; */
+    /* height: auto; */
+    min-height: 100vh;
+    font-family: monospace;
+    /* cursor: url('./cross4.png') 52 52, auto; */
+    }
+    /* .background{
+    min-height: 97vh;
+    } */
+    .flex-parent {
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 0%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    top:0%;
+    left: 0;
+    z-index: 10;
+    background-color: transparent;
+    justify-content: flex-start;
+    align-items: center;
+    transition: background-color 0.5s ease-in-out;
+    }
+    .flex-parent-2 {
+    margin-top: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 0%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    top:0%;
+    left: 0;
+    background-color: transparent;
+    z-index: 11;
+    justify-content: space-between;
+    align-items: center;
+    }
+    /* .itakemorespace {
+    background-color:blue;
+    color: white;
+    padding-left: 8vh;
+    padding-right: 8vh;
+    transition: background-color 0.5s ease-in-out, color 1s ease-in-out, padding 0.5s ease-in-out;    
+    } */
+    /* .itakemorespace:hover {
+    background-color: rgb(158, 207, 223);
+    } */
+    .itakelessspace {
+    -webkit-user-select: none;
+    /* cursor: pointer; */
+    display:flex;
+    margin-right: 1%;
+    flex-direction: row;
+    text-align: center;
+    background-color:white;
+    /* color: light-dark(black, rgb(221, 221, 221)); */
+    /* background-color: light-dark(white, black); */
+    transition: background-color 0.5s ease-in-out;
+    }
+    .lightgreen{
+    background-color: lightgreen;
+    }
+    .lightyellow{
+    background-color: #FFFFCC;
+    }
+    .pink {
+    background-color: #FFAACC;
+    }
+    .purple{
+    background-color: rgb(227, 130, 224);
+    }
+    .lightpurple{
+    background-color: #F28FE6;
+    }
+    .lightblue{
+    background-color: rgb(158, 207, 223);
+    }
+    .yellow{
+    background-color: #ffff99;
+    }
+    .white{
+    background-color: white;
+    }
+    .orange{
+    background-color: rgb(255, 185, 56);
+    }
+    .itakelessspace:hover {
+    background-color: rgb(158, 207, 223);
+    color:black;
+    transition: background-color 1s;
+    }
+    .itakelessspace a{
+    color:black;
+    transition: color 1s;
+    }
+    .itakelessspace a:hover{
+    color:black;
+    }
+    .itakemorespace a{
+    color: white;
+    transition: color 1s;
+    }
+    .itakemorespace a:hover{
+    color:black;
+    }
+    a:link,
+    a:visited {
+    text-decoration: none;
+    }
+    a.active {
+    background-color: rgb(158, 207, 223);
+    color: black;
+    transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+    }
+    .wave-text {
+    /* background-color: white; */
+    /* color:cornflowerblue; */
+    color:azure;
+    margin-top: 250px;
+    margin-right: 800px;
+    margin-bottom: 50%;
+    margin-left: 650px;
+    transform: skew(0deg, 0deg);
+    line-height: 100%;
+    position: absolute;
+    animation: skew 5s ease-in-out infinite, margin-top 4s ease-in-out;
+    transition: background-color 1s ease-in-out, color 1s ease-in-out, line-height 1s ease-in-out;
+    }
+    .itakelessspace2 {
+    /* color: light-dark(black, rgb(221, 221, 221)); */
+    /* background-color: light-dark(white, black); */
+    -webkit-user-select: none;
+    cursor: pointer;
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    padding-left: 0%;
+    padding-right: 0%;
+    transition: background-color 0.5s ease-in-out, padding 1s ease-in-out, font-size 0.5s ease-in-out,
+    color 1s ease-in-out;
+    }
+    .itakelessspace2.active-button {
+  background-color: rgb(158, 207, 223);
+  color: black;
+}
+    .itakelessspace2:hover {
+    cursor: pointer;
+    /* background-color: lightblue; */
+    /* color:black; */
+    /* font-size: 14px; */
+    /* padding-left: 1%; */
+    /* padding-right: 1%; */
+    }
+    .active-button{
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    /* background-color: green; */
+    /* background-color: lightblue; */
+    /* background-color: white; */
+    /* color: white; */
+    }
+
+    /* PROBLEM */
+    /* .itakelessspace2 a:active { 
+    background-color: red;
+    padding-left: 1%;
+    padding-right: 1%;
+     } */
+
+    .itakelessspace2 a{
+    color:black;
+    transition: color 1s;
+    }
+      
+    .itakelessspace2 a:hover{
+    color:black;
+    }
+    .iframe{
+    position: fixed;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    /* z-index: 999; */
+    overflow-y: auto;
+    }
+    #blinds{
+    /* background-color: black; */
+    }
+    .hidden {
+    opacity: 0;
+    display: none;
+    /* filter: blur(40px); */
+    /* visibility: hidden; */
+    /* transition: opacity 1s ease-in-out, filter 5s ease-in-out; */
+    }
+    /* .iframe:not (.hidden){
+    opacity: 50%;
+     } */
+    .td, th {
+    display: table-cell;
+    }
+    .opacityanimation{
+     animation: opacity 0.5s ease-in-out;
+    }
+    /* 
+    .active-button{
+    padding-left: 10%;
+    padding-right: 10%;
+    } */
+    /* .itakelessspace2{
+    padding-top: 1px;
+    padding-bottom: 1px;
+    } */
+    
+    .footer {
+    position: fixed;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    /* background-color: white; */
+    text-align: left;
+    transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 10pt;
+    }
+    .loader{
+    position: fixed;
+    display: block;
+    width: 20%;
+    height: 20%;
+    top: 50%;
+    left: 50%;
+    z-index: 13;
+    animation: loader 1s ease-in-out forwards;
+    pointer-events: none;
+    transform: translatex(-50%) translateY(-90%);  
+    }
+    .loader img{
+    width: 100%;
+    height: auto;
+    }
+    .loader video{
+    width: 100%;
+    height: auto;
+    }
+    .white-background{
+    position: fixed;
+    display: block;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    pointer-events: none;
+    animation: loader 1.3s ease-in-out forwards;
+    }
+    .p{
+    display: inline-block;
+    white-space: pre-wrap;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    .description{
+    position: fixed;
+    display: inline-block;
+    width: 28%;
+    bottom: 3vh;
+    left: 2%;
+    line-height: 1.4;
+    font-size: 8pt;
+    z-index: 12;
+    white-space: pre-wrap;
+    }
+
+  @media (max-width: 800px) {
+    .iframe {
+    width: 200vw;
+    min-height: 110vh;
+    left: 0;
+    transform: translatex(-25%);
+    /* z-index: 100; */
+    /* margin-top: 25%; */
+    /* top: -10vh; */
+    }
+    .flex-parent{
+    width: 100%;
+    font-size: 10pt;
+    }
+    .flex-parent-2{
+    width: 100%;
+    padding-top: 2vh;
+    font-size: 10pt;
+    }
+    .itakelessspace{
+    background-color: transparent;
+    }
+    .itakelessspace2{
+    background-color: transparent;
+    }
+    .description{
+    /* display: none; */
+    position: fixed;
+    width: 96%;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+    /* top: 90vh; */
+    /* opacity: 0%; */
+    /* background-color: lightblue; */
+    }
+  }
+    
+  </style>
+  </head>
+<body>
+        <!-- <audio id="sound"><source src="paper-scrunch.m4a" type="audio/mp4"></audio> -->
+        <!-- <div class="loader"><img src="david-icon.png"></div> -->
+        <!-- <div class="loader"><video class="video" autoplay  muted><source src="favicon-gif.mov" type="video/mp4"></video></div> -->
+        <!-- <div class="white-background"></div> -->
+  <div class="description hidden" id="orange-desc">"On the Balcony of Orange Street"<br><br>This two part book is my attempt at telling the story of the lost and found photographs of a dutch engineer in Suriname. The book invites the readers to take in the period scenery before slowly revealing the village where it all took place. Originally captured in the 1900s, the photographs have been collected from the Rijks Museum archive and repurposed into this book.<br><br>publication, 2024</div>
+
+<div class="description hidden" id="onion-desc">"Onion Creek, Austin, Texas"<br><br>If you moved to Onion Creek, Austin, Texas, today, and lived there for the rest of your life, would you be certain to say, on your death bed, that your neighbour 5 streets down changed his bathroom sink in 2019? If you owned this book, you would. Using very specific data from the city of Austin, Texas, this book is a collection of entries made to give readers a unique and personal view of a neighbourhood in the United States.<br><br>publication, 2025</div>
+
+<div class="description hidden" id="poetry-desc">"Poetry Magazine"<br><br>A printed adaptation of the online Poetry Magazine issue of April 2024. Designed using additional layers of see through paper, they allow the viewer to read multiple spreads at the same time. The layout combines original poems with their translated versions and imagery.<br><br>publication, 2025</div>
+
+<div class="description hidden" id="withoutatrace-desc">"Without a Trace"<br><br>A revival of the original and out of print "How to disappear in China without a trace" by Susanne Bürner. This adaptation puts a spin on the function of the book. The pages have been perforated to allow the evader to rip them out one by one. Designed together with Jonas Rimersma.<br><br>publication, 2023</div>
+
+<div class="description hidden" id="hands-desc">"Workshop Indicators"<br><br>A series of hands holding tools, as guides for finding workshops.<br><br>wayfinding, 2025</div>
+
+<div class="description hidden" id="interrobang-desc">"Interrobang Posters"<br><br>When was the last time you used the interrobang in written form? Never‽ This poster series has been designed to promote the use of this neglected, cool character. !+?=‽<br><br>poster series, 2024</div>
+
+<div class="description hidden" id="cutout-desc">"Cut Outs"<br><br>What is pop art really? This photographic series attempts to emulate the art current by capturing motion through series of frames.<br><br>photography, 2025</div>
+
+<div class="description hidden" id="flagpoetry-desc">"Flag Type"<br><br>Who said text has to be static? This illustration of poetry found on the web combines type with coding.<br><br>web coding, 2024</div>
+
+<div class="description hidden" id="titlegenerator-desc">"Title Generator"<br><br>Sometimes all you need to come up with a good idea is to jumble what you already have. Name generator for a project.<br><br>web coding, 2025</div>
+
+<div class="description hidden" id="blinds-desc">"40x1600"<br><br>What could be done with a video format of 40x1600px? Storytelling experiment.<br><br>student film, 2024</div>
+
+<div class="description hidden" id="howtomeoriginal-desc">"How to Me Original"<br><br>Are our day to day lifes as unique as we think they are, or has everything already played out before?<br><br>student film, 2025</div>
+
+        <div class="flex-parent">
+            
+            <div class="itakelessspace"><a href="index.html">Home</a></div>
+            <div class="itakelessspace"><a href="projects.html" class="active">Projects</a></div>
+            <div class="itakelessspace"><a href="about.html">About</a></div>
+            <!-- <div class="itakelessspace"><a href="">index</a></div> -->
+        </div>
+    
+        <div class="flex-parent-2">
+
+            <div class="itakelessspace2 white lightblue" data-target="orange">Orange Street</div>
+            <div class="itakelessspace2 white lightblue" data-target="onion">Onion Creek</div>
+            <div class="itakelessspace2 white lightblue" data-target="poetry">Poetry Magazine</div>
+            <div class="itakelessspace2 white lightblue" data-target="withoutatrace">Without a Trace</div>
+            <div class="itakelessspace2 white lightblue" data-target="hands">Workshop Indicators</div>
+            <div class="itakelessspace2 white lightblue" data-target="interrobang">Interrobang</div>
+            <div class="itakelessspace2 white lightblue" data-target="cutout">Cut Outs</div>
+            <div class="itakelessspace2 white lightblue" data-target="flagpoetry">Flag Type</div>
+            <div class="itakelessspace2 white lightblue" data-target="titlegenerator">Title Generator</div>
+            <div class="itakelessspace2 white lightblue" data-target="blinds">40x1600</div>
+            <div class="itakelessspace2 white lightblue" data-target="howtomeoriginal">How to Me Original</div>
+            
+        </div>
+
+        <iframe id="onion" class="iframe hidden"  src="onion-creek.html" scrolling="yes"></iframe>
+        <iframe id="blinds" class="iframe hidden" src="through-the-blinds.html" scrolling="yes"></iframe>
+        <iframe id="orange" class="iframe hidden" src="orange-street.html" scrolling="yes"></iframe>
+        <iframe id="poetry" class="iframe hidden" src="poetry-book.html" scrolling="yes"></iframe>
+        <iframe id="hands" class="iframe hidden" src="hands.html" scrolling="yes"></iframe>
+        <iframe id="interrobang" class="iframe hidden" src="interrobang.html" scrolling="yes"></iframe>
+        <iframe id="cutout" class="iframe hidden" src="cutout.html" scrolling="yes"></iframe>
+        <iframe id="flagpoetry" class="iframe hidden" src="begining.html" scrolling="yes"></iframe>
+        <iframe id="titlegenerator" class="iframe hidden" src="text+text.html" scrolling="yes"></iframe>
+        <iframe id="howtomeoriginal" class="iframe hidden" src="howtomeoriginal.html" scrolling="yes"></iframe>
+        <iframe id="withoutatrace" class="iframe hidden" src="withoutatrace.html" scrolling="yes"></iframe>
+
+      <div class="footer">
+      <!-- <p class="p">© 2025</p> -->
+      </div>
+
+    <script>
+
+const buttons = document.querySelectorAll('[data-target]');
+const iframes = document.querySelectorAll('.iframe');
+const descriptions = document.querySelectorAll('.description');
+
+    let activeIframe = null;
+    let activeDesc = null;
+
+    function clearActiveButtons() {
+    buttons.forEach(btn => btn.classList.remove('active-button'))
+  }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+        const targetId = button.dataset.target;
+        const targetIframe = document.getElementById(targetId);
+        const targetDesc = document.getElementById(targetId + '-desc');
+        
+
+        if (activeIframe === targetIframe) {
+            targetIframe.classList.add('hidden');
+            targetIframe.classList.remove('opacityanimation');
+            if (targetDesc) targetDesc.classList.add('hidden');
+            activeIframe = null;
+            activeDesc = null;
+            clearActiveButtons();
+        return;
+        }
+        
+
+        iframes.forEach(frame => frame.classList.add('hidden'));
+        descriptions.forEach(d => d.classList.add('hidden'));
+
+        clearActiveButtons();
+
+          
+        targetIframe.classList.remove('hidden');
+        targetIframe.classList.add('opacityanimation');
+        if (targetDesc) targetDesc.classList.remove('hidden');
+
+        button.classList.add('active-button');
+
+        activeIframe = targetIframe;
+        activeDesc = targetDesc;
+    });
+});
+if (buttons.length > 0) {
+  buttons[0].click();
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  const firstIframe = document.getElementById('orange');
+
+  if (!firstIframe.src) {
+    firstIframe.src = firstIframe.dataset.src;
+  }
+});
+
+      window.addEventListener('DOMContentLoaded', () => {
+  const iframes = document.querySelectorAll('.iframe');
+
+  requestIdleCallback(() => {
+    iframes.forEach(frame => {
+      if (!frame.src) {
+        frame.src = frame.dataset.src;
+      }
+    });
+  });
+});
+// const audio = document.getElementById("sound");
+// audio.volume = 0.1;
+// setTimeout (() => {
+//   audio.play();
+// }, 850);
+
+//     if (video.paused){
+//       video.play();
+//     } else {
+//       video.pause();
+//     }
+
+//     let activeIframe = null;
+//     let activeDesc = null;
+
+//     function clearActiveButtons() {
+//     buttons.forEach(btn => btn.classList.remove('active-button'))
+//   }
+
+//     const buttons = document.querySelectorAll('[data-target]');
+//     const iframes = document.querySelectorAll('.iframe');
+
+//     buttons.forEach(button => {
+//         button.addEventListener('click', () => {
+//         const targetId = button.getAttribute('data-target');
+//         const targetIframe = document.getElementById(targetId);
+//         const targetDesc = document.getElementById(targetId + '-desc');
+        
+
+//         if (activeIframe === targetIframe) {
+//             targetIframe.classList.add('hidden');
+//             targetIframe.classList.remove('opacityanimation');
+//             if (targetDesc) targetDesc.classList.add('hidden');
+//             activeIframe = null;
+//             activeDesc = null;
+//             clearActiveButtons();
+//             return;
+//             buttons.forEach(btn => btn.classList.add('white'));
+//         return;
+//         }
+        
+
+//         iframes.forEach(frame => frame.classList.add('hidden'));
+//         document.querySelectorAll('.orangedesc').forEach(desc => desc.classList.add('hidden'));
+//         clearActiveButtons();
+
+          
+//         buttons.forEach(btn => btn.classList.add('white'));
+//         button.classList.remove('white');
+
+
+//         targetIframe.classList.remove('hidden');
+//         targetIframe.classList.add('opacityanimation');
+//         if (targetDesc) targetDesc.classList.remove('hidden');
+
+//         button.classList.add('active-button');
+
+//         activeIframe = targetIframe;
+//         activeDesc = targetDesc;
+//     });
+//     });
+// if (buttons.length > 0) {
+//   buttons[0].click();
+// }
+
+// const audio = document.getElementById("sound");
+// audio.volume = 0.1;
+// setTimeout (() => {
+//   audio.play();
+// }, 850);
+
+//     if (video.paused){
+//       video.play();
+//     } else {
+//       video.pause();
+//     }
+    
+
+    
+    </script>
+
+</body>
+</html>

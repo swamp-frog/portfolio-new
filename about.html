@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>David Mihai</title>
+<link rel="icon" type="image/png" href="favicon-test.png">
+        
+<style>
+        @keyframes opacity{
+            0%{opacity: 0%;}
+            100%{opacity: 100%;}}
+
+        @keyframes blur{
+            0%{filter: blur(20px);}
+            100%{filter: blur(0px);}}
+
+        @keyframes loader{
+            0%{opacity: 100%;}
+            90%{opacity: 100%;}
+            100%{opacity: 0%;}}
+
+        @keyframes spin{
+            100%{transform: rotateY(180deg);}}
+
+        @keyframes loader{
+            0%{opacity: 100%;}
+            90%{opacity: 100%;}
+            100%{opacity: 0%;}}
+
+    @keyframes skew {
+      0% {
+      transform: translate(-50%) skew(0deg, 0deg);
+      }
+      25% {
+      transform: translate(-50%) skew(-5deg, 0deg);
+      }
+      /* 50% {
+      transform: translate(-50%) skew(0deg, 0deg);
+      } */
+      75% {
+      transform: translate(-50%) skew(5deg, 0deg);
+      }
+      /* 100% {
+      transform: translate(-50%) skew(0deg, 0deg);
+      } */
+      }
+        html {
+        animation: opacity 0.6s ease-in-out;
+        /* background-color: light-dark(whitesmoke, rgb(22, 22, 22)); */
+        background-color: whitesmoke;
+        }
+        /* :root {
+        color-scheme: light dark;
+        --link-color: light-dark(black, rgb(221, 221, 221));
+        --link-color-reverse: light-dark(rgb(221, 221, 221), black);
+        } */
+        *{
+        box-sizing: border-box;
+        }
+        body{
+        font-family: monospace;
+        /* color: light-dark(black,rgb(221, 221, 221)); */
+        color: black;
+        /* background-color: whitesmoke; */
+        height: 100%;
+        }
+        .background{
+        /* background: #bfbfbf; */
+        background-color: whitesmoke;
+        min-height: 97vh;
+        }
+        .flex-parent {
+        /* background: #bfbfbf; */
+        /* background-color: whitesmoke; */
+        /* padding-top: 3%; */
+        margin-top: 2%;
+        /* padding-left: 3%; */
+        /* padding-right: 3%; */
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 2%;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        top:0%;
+        left: 0;
+        z-index: 11;
+        /* border-top: 8px solid white; */
+        /* justify-content: space-between; */
+        justify-content: flex-start;
+        align-items: center;
+        transition: background-color 0.5s ease-in-out;
+        }
+        .itakelessspace {
+        -webkit-user-select: none;
+        display:flex;
+        margin-right: 1%;
+        flex-direction: row;
+        text-align: center;
+        background-color:white;
+        transition: background-color 0.5s ease-in-out;
+        }
+        .itakelessspace:hover {
+        background-color: rgb(158, 207, 223);
+        color:black;
+        transition: background-color 1s;
+        }
+      
+        .itakelessspace a{
+        color:black;
+        transition: color 1s;
+        }
+      
+        .itakelessspace a:hover{
+        color:black;
+        }
+
+        .itakemorespace a{
+        color: white;
+        transition: color 1s;
+        }
+
+        .itakemorespace a:hover{
+        color:black;
+        }
+
+        a:link,
+        a:visited {
+        text-decoration: none;
+        }
+
+        a.active {
+        background-color:rgb(158, 207, 223);
+        color: black;
+        transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+        }
+       
+    /* .cv {
+    display: block;
+    position: fixed;
+    width: fit-content;
+    margin-top: 80vh;
+    margin-left: 50vw;
+    transform: translate(-50%);
+    } */
+    /* .cv a{
+    background-color: lightblue;
+    color: black;
+    transition: background-color 0.5s ease-in-out;
+    } */
+    .cv a:hover{
+    background-color: lightgreen;
+    } 
+    .flipper{
+    position: fixed;
+    width: fit-content;
+    /* transform-origin: 50% 50%; */
+    perspective: 2000px;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 10;
+    /* transition: margin-left 0.6s ease-in-out, scale 0.6s ease-in-out; */
+    transition: margin-left 1s ease-in-out, scale 0.6s ease-in-out, margin-top 1s ease-in-out;
+    }
+    .card{
+    width: 30vh;
+    height: 30vh;
+    /* width: 10vw;
+    height: 10vh; */
+    position: relative;
+    /* transform-style: preserve-3d; */
+    transform-origin: 60% 30%;    
+    /* transform-origin: 70% 10%; */
+    /* transform-origin: 10% 10%; */
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.7s ease-in-out, margin-top 0.7s ease-in-out;
+    /* transition: transform 0.5s ease-in-out, margin-top 0.7s ease-in-out; */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    .card img{
+    width: 100%;
+    height: auto;
+    }
+    .front, .back{
+    position: absolute;
+    backface-visibility: hidden;
+    inset: 0;
+    z-index: 1;
+    /* transform-origin: 40% 10%; */
+    }
+    .back{
+    transform: rotateY(180deg);
+    }
+    .backtext{
+    position: absolute;
+    z-index: 2;
+    /* padding:8%; */
+    padding-left: 8%;
+    padding-top: 60%;
+    padding-right: 8%;
+    padding-bottom: 8%;
+    top:0;
+    font-style: italic;
+    text-align: center;
+    rotate: 0.7deg;
+    color: rgb(43, 43, 43);
+    }
+    .wave-text {
+    position: absolute;
+    display: block;
+    transform-origin: center;
+    width: 18%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    /* font-style: italic; */
+    font-size: 9pt;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 1;
+    /* animation: skew 10s ease-in-out infinite; */
+    }
+    .bar{
+    color: rgb(81, 144, 165);
+    /* color: light-dark(rgb(81, 144, 165), rgb(138, 190, 207)); */
+    }
+    .downloadportfolio,
+    .downloadcv{
+    color: rgb(81, 144, 165);
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.2s ease-in-out;
+    }
+    .downloadportfolio:hover,
+    .downloadcv:hover{
+    /* color: rgb(198, 239, 255); */
+    /* background-color: rgb(61, 61, 61); */
+    background-color: rgb(158, 207, 223);
+    color: rgb(63, 113, 130);;
+    /* color: black; */
+    }
+    ::selection {
+    background: rgb(158, 207, 223);
+    color: black;
+    }
+    .longdescription{
+    position: absolute;
+    display: block;
+    top: 30vh;
+    left: 1.3%;
+    }
+    .footer{
+    /* display: inline-block; */
+    position: fixed;
+    display: block;
+    bottom: 2%;
+    left: 1.3%;
+    cursor: pointer;
+    /* font-size: 9pt; */
+    }
+    .cornercard{
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin-left: 41%;
+    margin-top: -17.5%;
+    rotate: -0.5deg;
+    position: fixed;
+    transform-style: preserve-3d;
+    transform-origin: 60% 30%;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 0.7s ease-in-out, margin-top 0.7s ease-in-out, margin-left 0.7s ease-in-out, rotate 0.5s ease-in-out;
+    }
+    .description{
+    display: inline-block;
+    white-space: pre-wrap;
+    line-height: 1.3;
+    width: 28%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
+    color: black;
+    }
+    .plink{
+    position: relative;
+    white-space: pre; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+    }
+    .p{
+    position: relative;
+    display: inline-block;
+    white-space: pre-wrap;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding: 0;
+    color: black;
+    }
+    .p a{
+    color: var(--link-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .p a:hover{
+    background-color: rgb(158, 207, 223);
+    }
+    .pmobile{
+    position: relative;
+    display: none;
+    white-space: pre-wrap;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    padding: 0;
+    color: black;
+    }
+    .pmobile a{
+    color: var(--link-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .pmobile a:hover{
+    background-color: rgb(158, 207, 223);
+    }
+        @media (max-width: 800px) {
+        .flex-parent{
+        width: 100%;
+        font-size: 10pt;
+        }
+        .description{
+        position: relative;
+        width: 96%;
+        left: 2%;
+        pointer-events: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+        .p{
+        left: 2%;
+        display: none;
+        }
+        .plink{
+        position: relative;
+        left: 2%;
+        }
+        .pmobile{
+        display: inline-block;
+        width: 70%;
+        left: 2%;
+        }
+        .flipper{
+        top: 8%
+        }
+        }
+</style>
+
+<head>
+    <body>
+        <!-- <audio id="sound"><source src="paper-scrunch.m4a" type="audio/mp4"></audio> -->
+
+         <div class="flex-parent">
+            
+            <div class="itakelessspace"><a href="index.html">Home</a></div>
+            <div class="itakelessspace"><a href="projects.html">Projects</a></div>
+            <div class="itakelessspace"><a href="about.html" class="active">About</a></div>
+            <!-- <div class="itakelessspace"><a href="">index</a></div> -->
+             
+        </div>
+<div class="flipper" id="flipper">
+    <div class="card cardhiddden" id="card">
+        <div class="front"><img src="instaxdavid.png"></div>
+        <div class="back"><img src="instaxdavidback.png">
+        <!-- <div class="backtext"><p class="p">David spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities</p></div> -->
+    </div>
+        
+    </div>
+</div>
+        <!-- <div class="wave-text">
+        David spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities.
+        </div> -->
+
+        <!-- <div class="cornercard" id="cornercard"><img src="instaxdavidback.png"><div class="backtext">David studies graphic design at Artez. He makes books, zines, posers and other types of printed matter. He also designs website pages.</div></div> -->
+
+         <div class="footer">
+        <p class="description">David Mihai is a graphic design student at Artez University, Arnhem, NL. He spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities. His works include books, zines, posters, web pages.</p>
+        <!-- <p style="white-space: pre; margin-bottom: 4px">contact me: d.mihai@student.artez.nl<br>follow me: davidmihai.04<br>find me: 51.983871 5.894240</p> -->
+        <p class="plink"><a class="downloadportfolio whitehover" href="portfolioy3.pdf" target="_blank">download portfolio</a><a class="bar"> | </a><a class="downloadcv whitehover" href="cv.pdf" target="_blank"="">download cv</a></p>
+
+        <p class="p"><a class="whitehover" href="mailto:d.mihai@student.artez.nl">mail me: d.mihai@student.artez.nl</a> | <a class="whitehover" href="https://www.instagram.com/davidmihai.04?igsh=MWs0eTY2a2xxOWxsaw%3D%3D&utm_source=qr">follow me: davidmihai.04</a> | <a href="https://www.google.com/maps/place/51°59'01.9%22N+5°53'39.3%22E/@51.983871,5.89424,17z/data=!3m1!4b1!4m4!3m3!8m2!3d51.983871!4d5.89424?entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D">find me: 51.983871 5.894240</a></p>
+
+        <p class="pmobile"><a class="whitehover" href="mailto:d.mihai@student.artez.nl">mail me: d.mihai@student.artez.nl</a><br><a class="whitehover" href="https://www.instagram.com/davidmihai.04?igsh=MWs0eTY2a2xxOWxsaw%3D%3D&utm_source=qr">follow me: davidmihai.04</a><br><a href="https://www.google.com/maps/place/51°59'01.9%22N+5°53'39.3%22E/@51.983871,5.89424,17z/data=!3m1!4b1!4m4!3m3!8m2!3d51.983871!4d5.89424?entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D">find me: 51.983871 5.894240</a></p>
+        <!-- | <a href="https://www.artez.nl/en/programmes/bachelor/graphic-design-arnhem">Graphic Design Artez University</a> -->
+        </div>
+        <!-- <div class="longdescription"><p class="p" style="white-space:pre;">David is currently coming up with ideas from the <br>graphic design department at Artez University.<br></p></div> -->
+    </body>
+</head>
+<script>
+
+    // const card = document.getElementById('card')
+    // const flipper = document.getElementById('flipper')
+
+    // card.addEventListener ('click', () =>{
+    //     card.style.transform = "rotateY(-180deg)";
+    //     flipper.style.marginLeft = "64%";
+    //     // flipper.style.scale = "120%";
+    //     // card.style.width = "600px";
+    // });
+
+    const card = document.getElementById('card')
+    const cornercard = document.getElementById('cornercard')
+    const flipper = document.getElementById('flipper')
+
+    // let clickCount = 0;
+
+    // card.addEventListener ('click', () =>{
+    //     clickCount++;
+
+    //     if (clickCount === 1) {card.style.transform = "rotate(170deg)";}
+    //     else if (clickCount ===2) {card.style.transform = "rotate(0deg)";
+    //     clickCount = 0;}
+    // });
+
+
+
+
+    // let clickCount = 0;
+
+    // card.addEventListener ('click', () =>{
+    //     clickCount++;
+
+    //     if (clickCount === 1) {card.style.transform = "rotate(170deg)";}
+    //     else if (clickCount === 2) {card.style.transform = "rotate(220deg)"; flipper.style.marginTop = "-27%"; flipper.style.marginLeft = "65%";}
+    //     else {clickCount = 0;}
+    // });
+
+
+
+
+
+     card.addEventListener ('click', () =>{
+        card.style.transform = "rotate(170deg)";
+    });
+
+
+
+
+
+
+    // card.addEventListener ('click', () =>{
+    //     card.style.transform = "rotate(-8deg)";
+    //     flipper.style.marginLeft = "38%";
+    //     cornercard.style.marginLeft = "46%";
+    //     cornercard.style.marginTop = "-16%";
+    //     cornercard.style.rotate = "4deg";
+    // });
+
+    // cornercard.addEventListener ('click', ()=>{
+    //     cornercard.style.marginTop = "0%";
+    //     cornercard.style.marginLeft = "80%";
+    // });
+
+
+    const audio = document.getElementById("sound");
+audio.volume = 0.1;
+setTimeout (() => {
+  audio.play();
+}, 0);
+</script>
+</html>
