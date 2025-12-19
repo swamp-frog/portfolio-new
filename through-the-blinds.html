@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinds</title>
+<style>
+    /* @keyframes fade-in{
+            0%{
+            opacity: 0;
+            }
+            100%{
+            opacity: 1;
+            }
+        } */
+
+       @keyframes blur{
+            0%{
+                filter: blur(60px);
+            }
+            100%{
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes black{
+            0%{
+                background-color: whitesmoke;
+            }
+            100%{
+                background-color: black;
+            }
+        }
+
+        @keyframes opacity{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+    html {
+            /* animation: blur 4s ease-in-out; */
+            /* min-height: 200%; */
+            margin-top:9%;
+            height: 80vh;
+        }
+        
+        body {
+        /* background-color: #bfbfbf; */
+        /* background-color: whitesmoke */
+        /* animation: black 2s forwards; */
+        display: flex;
+        flex-direction: column;
+        font-family: "lucida console", monaco, monospace;
+        /* height: 100%; */
+        }
+
+    .flex-parent {
+        /* background: #bfbfbf; */
+        /* background-color: whitesmoke; */
+        padding-top: 3%;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-bottom: 2%;
+        margin-left: 50%;
+        translate: -50%;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        top:0%;
+        left: 0;
+        z-index: 9;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.5s ease-in-out;
+      }
+
+    .itakelessspace {
+      display:flex;
+      flex-direction: row;
+      text-align: center;
+      background-color:lightblue;
+      transition: background-color 0.5s ease-in-out;  
+      }
+      
+      /* .itakelessspace:hover {
+      background-color: lightblue;
+      color:black;
+      transition: background-color 1s;
+      } */
+
+    .bigcenterimagecontainer {
+        z-index: 1;
+        /* flex-basis: 65%; */
+        display: flex;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        width: 38%;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: visible;
+        z-index: 100;
+      }
+
+      .video{
+        width: 100%;
+        height: auto;
+        /* animation: blur 3s ease-in-out; */
+        transition: filter 5s ease-in-out;
+        /* z-index: 1; */
+      }
+
+      .video:hover{
+        /* filter: blur(0px); */
+      }
+
+      .text-wrapper {
+      cursor: default;
+      position: relative;
+      z-index: 1;
+      /* background-color: #fff; */
+      color: gainsboro;
+      width: 50%;
+      min-height: 10vh;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1vh;
+      transition: color 1.5s ease-in-out;
+      }
+
+      .text-wrapper:hover {
+        color: black;
+      }
+
+      .text-wrapper:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+
+      /* .video:hover{
+        filter: blur(50px);
+      } */
+    .description{
+    position: fixed;
+    display: inline-block;
+    width: 28%;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    font-size: 8pt;
+    bottom: 3vh;
+    left: 2%;
+    z-index: 12;
+    }
+    ::selection {
+    background: rgb(158, 207, 223);
+    color: black;
+    }
+    /* .backgroundimage img{
+    width: 120%;
+    height: auto;
+    filter: blur(20px);
+    left: -30%;
+    }
+    .backgroundimage{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    left:0%;
+    top:0%;
+    z-index: 1;
+    overflow: hidden;
+    } */
+    </style>
+    </head>
+<body>
+
+<!-- <div class="description">"40x1600"<br><br>What could be done with a video format of 40x1600px? Storytelling experiment.<br><br>student film, 2024</div> -->
+
+    <div class="flex-parent">
+    <!-- <div class="itakelessspace">Through the Blinds</div> -->
+    </div>
+
+    <div class="bigcenterimagecontainer">
+    <video src="slit-video.mov" type="video/mp4" controls class="video" poster="poster-blinds.png" playsinline webkit-playsinline></video>
+    </div>
+
+    <!-- <div class="backgroundimage"><img src="poster-blinds.png"></div> -->
+    <!-- <div class="text-wrapper">
+    <div class="text-block">How much can we watch at once? Is there a limit to what we can process?<br> Who said time was linear?</div>
+    </div> -->
+
+   
+</body>
+</html>
