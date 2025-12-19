@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poetry-book-html</title>
+<style>
+    /* @keyframes fade-in{
+            0%{
+            opacity: 0;
+            }
+            100%{
+            opacity: 1;
+            }
+        } */
+
+       @keyframes blur{
+            0%{
+                filter: blur(60px);
+            }
+            100%{
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes opacity{
+            0%{
+                opacity: 0%;
+            }
+            100%{
+                opacity: 100%;
+                }
+        }
+
+        @keyframes black{
+            0%{
+                background-color: whitesmoke;
+            }
+            100%{
+                background-color: black;
+            }
+        }
+
+        @keyframes opacity{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+    html {
+            /* animation: fade-in 1s ease-in-out; */
+            min-height: 200%;
+            margin-top:9%;
+            /* animation: blur 0.5s forwards; */
+            /* animation: opacity 0.2s forwards; */
+        }
+        
+        body {
+        /* background-color: #bfbfbf; */
+        /* background-color: whitesmoke */
+        display: flex;
+        flex-direction: column;
+        font-family: "lucida console", monaco, monospace;
+        height: auto;
+        padding-bottom: 20vh;
+        }
+
+    .flex-parent {
+        /* background: #bfbfbf; */
+        /* background-color: whitesmoke; */
+        padding-top: 3%;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-bottom: 2%;
+        margin-left: 50%;
+        translate: -50%;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        top:0%;
+        left: 0;
+        z-index: 9;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.5s ease-in-out;
+      }
+
+    .itakelessspace {
+      display:flex;
+      flex-direction: row;
+      text-align: center;
+      background-color:lightblue;
+      transition: background-color 0.5s ease-in-out;  
+      }
+      
+      /* .itakelessspace:hover {
+      background-color: lightblue;
+      color:black;
+      transition: background-color 1s;
+      } */
+
+    .bigcenterimagecontainer {
+        z-index: 1;
+        flex-basis: 65%;
+        display: block;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        width: 75%;
+        height: auto;
+        /* margin-top:0%; */
+        margin-top: -10vh;
+        left:50%;
+        top:0%;
+        transform: translatex(-50%);
+        /* overflow: hidden; */
+        overflow: visible;
+      }
+
+      .photo{
+        width: 100%;
+        height: auto;
+        margin-bottom: -10%;
+        /* rotatex: 20deg; */
+        /* animation: blur 4s ease-in-out; */
+        transition: filter 5s ease-in-out;
+        
+      }
+
+      .photo:hover{
+        /* filter: blur(0px); */
+      }
+    .description{
+    position: fixed;
+    display: inline-block;
+    width: 28%;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    font-size: 8pt;
+    /* top: 87.2vh; */
+    bottom: 3vh;
+    left: 2%;
+    z-index: 12;
+    /* top: 5vh; */
+    /* bottom: 6%; */
+    }
+      /* .video:hover{
+        filter: blur(50px);
+      } */
+    ::selection {
+    background: rgb(158, 207, 223);
+    color: black;
+    }
+    </style>
+    </head>
+<body>
+    <div class="flex-parent">
+    <!-- <div class="itakelessspace">Through the Blinds</div> -->
+    </div>
+<!-- <div class="description">"Poetry Magazine"<br><br>A printed adaptation of the online Poetry Magazine issue of April 2024. Designed using additional layers of see through paper, they allow the viewer to read multiple spreads at the same time. The layout combines original poems with their translated versions and imagery.<br><br>publication, 2025</div> -->
+    <div class="bigcenterimagecontainer">
+        <img src="poetrybook1.png" type="img/png" class="photo">
+        <img src="poetrybook2.png" type="img/png" class="photo">
+        <img src="poetrybook3.png" type="img/png" class="photo">
+        <img src="poetrybook4.png" type="img/png" class="photo">
+        <img src="poetrybook5.png" type="img/png" class="photo">
+        
+    </div>
+
+</body>
+</html>

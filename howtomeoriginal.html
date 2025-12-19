@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Me Original</title>
+<style>
+    /* @keyframes fade-in{
+            0%{
+            opacity: 0;
+            }
+            100%{
+            opacity: 1;
+            }
+        } */
+
+       @keyframes blur{
+            0%{
+                filter: blur(60px);
+            }
+            100%{
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes black{
+            0%{
+                background-color: whitesmoke;
+            }
+            100%{
+                background-color: black;
+            }
+        }
+
+    @keyframes opacity{
+    0%{opacity: 0;}
+    100%{opacity: 1;}}
+
+    html {
+    max-height: 100vh;
+    margin-top:9%;
+    }
+    body {
+    display: flex;
+    flex-direction: column;
+    font-family: "lucida console", monaco, monospace;
+    }
+    .flex-parent {
+    /* background: #bfbfbf; */
+    /* background-color: whitesmoke; */
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+    margin-left: 50%;
+    translate: -50%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    top:0%;
+    left: 0;
+    z-index: 9;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s ease-in-out;
+    }
+
+    .itakelessspace {
+      display:flex;
+      flex-direction: row;
+      text-align: center;
+      background-color:lightblue;
+      transition: background-color 0.5s ease-in-out;  
+      }
+      
+      /* .itakelessspace:hover {
+      background-color: lightblue;
+      color:black;
+      transition: background-color 1s;
+      } */
+
+    .bigcenterimagecontainer {
+        z-index: 1;
+        /* flex-basis: 65%; */
+        display: flex;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        width: 50%;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-bottom: 1%;
+        overflow: visible;
+      }
+
+      .video{
+        width: 100%;
+        height: auto;
+        /* animation: blur 3s ease-in-out; */
+        transition: filter 5s ease-in-out;
+        
+      }
+
+      .video:hover{
+        /* filter: blur(0px); */
+      }
+
+      .text-wrapper {
+      cursor: default;
+      position: relative;
+      z-index: 1;
+      /* background-color: #fff; */
+      color: gainsboro;
+      width: 50%;
+      min-height: 10vh;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1vh;
+      transition: color 1.5s ease-in-out;
+      }
+    .text-wrapper:hover {
+     color: black;
+    }
+    .text-wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    .label{
+    margin-left: auto;
+    margin-right: auto;
+    }
+    /* .video:hover{
+    filter: blur(50px);
+    } */
+    .description{
+    position: fixed;
+    display: inline-block;
+    width: 28%;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    font-size: 8pt;
+    bottom: 3vh;
+    left: 2%;
+    z-index: 12;
+    }
+    ::selection {
+    background: rgb(158, 207, 223);
+    color: black;
+    }
+    </style>
+    </head>
+<body>
+    <div class="flex-parent">
+    <!-- <div class="itakelessspace">Through the Blinds</div> -->
+    </div>
+
+    <!-- <div class="description">"How to Me Original"<br><br>Are our day to day lifes as unique as we think they are, or has everything we've ever done played out before?<br><br>student film, 2025</div> -->
+ 
+    <div class="bigcenterimagecontainer">
+    <video src="HowtoMeOriginal.mov" type="video/mp4" id="videoPlayer" controls class="video" poster="poster-bieber-2.png" playsinline webkit-playsinline></video>
+    </div>
+
+    <!-- <div class="text-wrapper">
+    <div class="text-block"></div>
+    </div> -->
+
+   
+</body>
+<script>
+    // var videoPlayer = document.getElementById('videoPlayer');
+
+    // // Auto play, half volume.
+    // videoPlayer.pause()
+    // videoPlayer.volume = 0.5;
+
+    // // Play / pause.
+    // videoPlayer.addEventListener('click', function () {
+    //     if (videoPlayer.paused == false) {
+    //         videoPlayer.pause();
+    //         videoPlayer.firstChild.nodeValue = 'Play';
+    //     } else {
+    //         videoPlayer.play();
+    //         videoPlayer.firstChild.nodeValue = 'Pause';
+    //     }
+    // });
+
+</script>
+</html>

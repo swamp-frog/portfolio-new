@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        font-family: monospace;
+        background-color: aliceblue;
+      }
+      .wrapper{
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      }
+      .button{
+      position: absolute;
+      width: fit-content;
+      top: 45%;
+      left: 50%;
+      transform: translatex(-50%); */
+     }
+     .result{
+      position: absolute;
+      width: fit-content;
+      top: 48%;
+      left: 50%;
+      transform: translatex(-50%);
+     }
+    .description{
+    position: fixed;
+    display: inline-block;
+    width: 28%;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    font-size: 8pt;
+    bottom: 3vh;
+    left: 2%;
+    z-index: 12;
+    }
+    ::selection {
+    background: rgb(158, 207, 223);
+    color: black;
+    }
+      </style>
+      <body>
+        <!-- <div class="description">"Title Generator"<br><br>Sometimes all you need to come up with a good idea is to jumble what you already have. Name generator for a project.<br><br>web coding, 2025</div> -->
+        <div class="wrapper">
+        <button id="button" class="button">generate title</button>
+        <div id="result" class="result hidden">
+        <label>...</label>
+        </div>
+      </div>
+      </body>
+    </head>
+    <script>
+        const button = document.getElementById ("button");
+        const result = document.getElementById ("result");
+
+        const list1 = [
+        "bieber", "match", "shoes", "printer", "dollar", "paris", "2012", "toss", 
+        "preaching", "How to", "Home Run", "shelves", "stairs", "correctly", "skate", "hall",
+        "repetition", "scrunch", "throwaway", "tutorial", "Me", "original", "rad", "viral",
+        "walker", "clips", "day", "shop", "copy", "daily", "unlikely", "", "", "", "", "",
+        ];
+
+        // const list1 = [
+        // "machine", "magical", "idea", "coding", "smash", "thoughts",  "scramble", "boom",
+        // ];
+
+        // const list1 = [
+        // "a", "b", "c"];
+
+        // const list2 = [
+        // "d", "e", "f"
+        // ];
+
+        function randomlist1a() {
+        return list1[Math.floor(Math.random() * list1.length)];
+        }  
+        function randomlist1b() {
+        return list1[Math.floor(Math.random() * list1.length)];
+        }  
+        function randomlist1c() {
+        return list1[Math.floor(Math.random() * list1.length)];
+        }  
+          
+        // if (randomlist1b() == randomlist1a()){
+        //   conditionMet = true} 
+        //   else { condition.Met = false}
+
+        // do {randomlist1b();
+        // } while (conditonMet = false);
+
+        button.addEventListener("click", function() {
+            const list1a = randomlist1a();
+            const list1b = randomlist1b();
+            const list1c = randomlist1c();
+            // const list2 = randomlist2();
+
+        result.classList.remove ("hidden");
+        result.innerHTML = `<label> ${list1a} ${list1b} ${list1c}</label>`;
+        });
+    </script>
+</html>
+
+<!-- title, goal, process, how did te "co" work?
+can you give me feedback on? -->

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onion-creek-html</title>
+<style>
+        @keyframes blur{
+        0%{filter: blur(60px);}
+        100%{filter: blur(0px); }}
+
+        @keyframes opacity{
+        0%{opacity: 0%;}
+        100%{opacity: 100%;}}
+
+        @keyframes black{
+        0%{background-color: whitesmoke;}
+        100%{background-color: black;
+        }}
+
+        @keyframes opacity{
+        0%{ opacity: 0;}
+        100%{opacity: 1;
+        }}
+
+    :root {
+    /* color-scheme: light dark; */
+    }
+    html {
+    /* animation: fade-in 1s ease-in-out; */
+    min-height: 200%;
+    } 
+    body {
+    display: flex;
+    flex-direction: column;
+    font-family: "lucida console", monaco, monospace;
+    height: auto;
+    padding-bottom: 20vh;
+    /* background-color: whitesmoke; */
+    }
+    .flex-parent {
+    /* background: #bfbfbf; */
+    /* background-color: whitesmoke; */
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+    margin-left: 50%;
+    translate: -50%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    top:0%;
+    left: 0;        z-index: 9;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s ease-in-out;
+    }
+    .itakelessspace {
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    background-color:lightblue;
+    transition: background-color 0.5s ease-in-out;  
+    }
+    /* .itakelessspace:hover {
+    background-color: lightblue;
+    color:black;
+    transition: background-color 1s;
+    } */
+    .bigcenterimagecontainer {
+    z-index: 1;
+    display: block;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    /* width: 62%; */
+    width: 100%;
+    height: auto;
+    margin-top:7%;
+    left:50%;
+    top:0%;
+    transform: translatex(-50%);
+    /* overflow: hidden; */
+    overflow: visible;
+    z-index: 10;
+    }
+    .photo{
+    width: 100%;
+    height: auto;
+    margin-bottom: 5vh;
+    /* margin-top: -4%; */
+    /* margin-bottom: -18%; */
+    transition: filter 1s ease-in-out;
+    }
+    .photo-vertical{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 5vh;
+    /* margin-bottom: 3%; */
+    }
+    .photo:hover{
+    /* filter: blur(10px); */
+    }
+    /* .video:hover{
+    filter: blur(50px);
+    } */
+    .description{
+    position: fixed;
+    display: inline-block;
+    width: 28%;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    font-size: 8pt;
+    bottom: 3vh;
+    left: 2%;
+    z-index: 12;
+    }
+    .footer {
+    position: fixed;
+    display: block;
+    width: 30%;
+    /* bottom: 3%; */
+    /* top: 20%; */
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    text-align: left;
+    font-size: 10pt;
+    /* background-color: white; */
+    transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+    -webkit-user-select: none;
+    cursor: pointer;
+    z-index: 1;
+    }
+    /* .backimage{
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    }
+    .backimage img{
+    width: 100%;
+    height: auto;
+    } */
+     ::selection {
+    background: rgb(158, 207, 223);
+    color: black;
+    }
+    @media (max-width: 800px) {
+    .description{
+    position: fixed;
+    width: 100vw;
+    font-size: 8pt;
+    }
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="flex-parent">
+    </div>
+    <div class="bigcenterimagecontainer">
+        <img src="orangebook1.webp" type="img/png" class="photo-vertical">
+        <img src="orangebook2.webp" type="img/png" class="photo-vertical">
+        <img src="orangebook6.webp" type="img/png" class="photo">
+        
+        <img src="orangebook4.webp" type="img/png" class="photo">
+        
+        <img src="orangebook7.webp" type="img/png" class="photo">
+        <img src="orangebook8.webp" type="img/png" class="photo">
+        <!-- <img src="orangebook3.webp" type="img/png" class="photo"> -->
+        
+    </div>
+</body>
+</html>

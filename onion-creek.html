@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onion-creek-html</title>
+<style>
+    /* @keyframes fade-in{
+            0%{
+            opacity: 0;
+            }
+            100%{
+            opacity: 1;
+            }
+        } */
+
+       @keyframes blur{
+            0%{
+                filter: blur(60px);
+            }
+            100%{
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes opacity{
+            0%{
+                opacity: 0%;
+            }
+            100%{
+                opacity: 100%;
+                }
+        }
+
+        @keyframes black{
+            0%{
+                background-color: whitesmoke;
+            }
+            100%{
+                background-color: black;
+            }
+        }
+
+        @keyframes opacity{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+    html {
+            /* animation: fade-in 1s ease-in-out; */
+            min-height: 200%;
+            margin-top:9%;
+            /* animation: blur 1s forwards; */
+            /* animation: opacity 0.2s forwards; */
+
+        }
+        
+        body {
+        /* background-color: #bfbfbf; */
+        /* background-color: whitesmoke */
+        display: flex;
+        flex-direction: column;
+        font-family: "lucida console", monaco, monospace;
+        height: auto;
+        padding-bottom: 20vh;
+        }
+
+    .flex-parent {
+        /* background: #bfbfbf; */
+        /* background-color: whitesmoke; */
+        padding-top: 3%;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-bottom: 2%;
+        margin-left: 50%;
+        translate: -50%;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        top:0%;
+        left: 0;
+        z-index: 9;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.5s ease-in-out;
+}
+.itakelessspace {
+display:flex;
+flex-direction: row;
+text-align: center;
+background-color:lightblue;
+transition: background-color 0.5s ease-in-out;  
+}
+
+
+
+.bigcenterimagecontainer {
+z-index: 1;
+/* flex-basis: 65%; */
+display: block;
+position: relative;
+background-size: cover;
+background-position: center;
+width: 62%;
+height: auto;
+left:50%;
+transform: translatex(-50%);
+margin-top: 5%;
+overflow: visible;
+justify-content: center;
+}
+.photo{
+width: 100%;
+height: auto;
+margin-top: -12vh;
+margin-bottom: 0%;
+transition: filter 5s ease-in-out;
+}
+.bigcenterimagecontainer2{
+z-index: 1;
+/* flex-basis: 65%; */
+display: block;
+position: relative;
+background-size: cover;
+background-position: center;
+width: 70vw;
+height: auto;
+left:50%;
+transform: translatex(-50%);
+margin-top: 0%;
+overflow: visible;
+justify-content: center;
+}
+.photowide{
+width: 100%;
+height: auto;
+margin-bottom: 12vh;
+/* margin-bottom: 5%; */
+transition: filter 5s ease-in-out;
+}
+
+
+
+.description{
+position: fixed;
+display: inline-block;
+width: 28%;
+white-space: pre-wrap;
+line-height: 1.4;
+font-size: 8pt;
+/* top: 84.5vh; */
+bottom: 3vh;
+left: 2%;
+z-index: 12;
+/* top: 5vh; */
+/* bottom: 6%; */
+}
+.footer {
+position: absolute;
+display: block;
+text-align: left;
+width: 32%;
+padding: 20px;
+rotate: -2deg;
+left: 1%;
+top: 110%;
+font-size: 9pt;
+/* background-color: white; */
+-webkit-user-select: none;
+cursor: pointer;
+z-index: 1;
+transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+}
+::selection {
+background: rgb(158, 207, 223);
+color: black;
+}
+/* .whitespace{
+height: 20vh;
+width: 100vw;
+pointer-events: none;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+} */
+</style>
+</head>
+<body>
+    <div class="flex-parent">
+    </div>
+    <div class="bigcenterimagecontainer">
+        <img src="onionres1.webp" type="img/png" class="photo">
+        <img src="onionres2.png" type="img/png" class="photo">
+        <img src="onionres3.png" type="img/png" class="photo">
+        <!-- <img src="onionres4.png" type="img/png" class="photo"> -->
+        <!-- <img src="onionbook1.png" type="img/png" class="photo">
+        <img src="onionbook2.png" type="img/png" class="photo">
+        <img src="onionbook3.png" type="img/png" class="photo"> -->
+    </div>
+
+    <div class="bigcenterimagecontainer2">
+        <!-- <img src="blue-map-text.png" type="img/png" class="photowide">
+        <img src="blue-map-normal.png" type="img/png" class="photowide"> -->
+        <img src="blue-maps.webp" type="img/png" class="photowide">
+        <img src="blue-map-text.webp" type="img/png" class="photo">
+    </div>
+
+    <!-- <div class="whitespace"></div> -->
+
+<div class="footer">
+</div>
+    
+</body>
+</html>
