@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cutout</title>
+<style>
+    /* @keyframes fade-in{
+            0%{
+            opacity: 0;
+            }
+            100%{
+            opacity: 1;
+            }
+        } */
+
+       @keyframes blur{
+            0%{
+                filter: blur(60px);
+            }
+            100%{
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes opacity{
+            0%{
+                opacity: 0%;
+            }
+            100%{
+                opacity: 100%;
+                }
+        }
+
+        @keyframes black{
+            0%{
+                background-color: whitesmoke;
+            }
+            100%{
+                background-color: black;
+            }
+        }
+
+        @keyframes opacity{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+    html {
+            /* animation: fade-in 1s ease-in-out; */
+            min-height: 200%;
+            margin-top:9%;
+            /* animation: blur 0.5s forwards; */
+            /* animation: opacity 0.2s forwards; */
+
+        }
+        
+        body {
+        /* background-color: #bfbfbf; */
+        /* background-color: whitesmoke */
+        display: flex;
+        flex-direction: column;
+        font-family: "lucida console", monaco, monospace;
+        height: auto;
+        padding-bottom: 20vh;
+        }
+
+    .flex-parent {
+        /* background: #bfbfbf; */
+        /* background-color: whitesmoke; */
+        padding-top: 3%;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-bottom: 2%;
+        margin-left: 50%;
+        translate: -50%;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        top:0%;
+        left: 0;
+        z-index: 9;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.5s ease-in-out;
+      }
+
+    .itakelessspace {
+      display:flex;
+      flex-direction: row;
+      text-align: center;
+      background-color:lightblue;
+      transition: background-color 0.5s ease-in-out;  
+      }
+      
+      /* .itakelessspace:hover {
+      background-color: lightblue;
+      color:black;
+      transition: background-color 1s;
+      } */
+    .bigcenterimagecontainer {
+    z-index: 1;
+    flex-basis: 65%;
+    display: block;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    width: 75%;
+    height: auto;
+    left:48%;
+    top:-10vh;
+    transform: translatex(-50%);
+    /* overflow: hidden; */
+    overflow: visible;
+    }
+    .photo{
+    width: auto;
+    height: 100vh;
+    margin: 0%;
+    /* animation: blur 4s ease-in-out; */
+    transition: filter 5s ease-in-out;
+    }
+    .photo:hover{
+    /* filter: blur(0px); */
+    }
+    .description{
+    position: fixed;
+    display: inline-block;
+    width: 28%;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    font-size: 8pt;
+    /* top: 90vh; */
+    bottom: 3vh;
+    left: 2%;
+    z-index: 12;
+    /* top: 5vh; */
+    /* bottom: 6%; */
+    }
+    ::selection {
+    background: rgb(158, 207, 223);
+    color: black;
+    }
+    </style>
+    </head>
+<body>
+    <div class="flex-parent">
+    <!-- <div class="itakelessspace">Through the Blinds</div> -->
+    </div>
+
+<!-- <div class="description">"Cut Outs"<br><br>What is pop art really? This photography series attempts to emulate the art current by capturing motion as series of frames.<br><br>photography, 2025</div> -->
+
+    <div class="bigcenterimagecontainer">
+        <img src="cutout1.webp" type="img/png" class="photo">
+        <img src="cutout2.webp" type="img/png" class="photo">
+        <img src="cutout3.webp" type="img/png" class="photo">
+        <img src="cutout4.webp" type="img/png" class="photo">
+        <img src="cutout5.webp" type="img/png" class="photo">
+        <img src="cutout6.webp" type="img/png" class="photo">
+        <img src="cutout7.webp" type="img/png" class="photo">
+        <img src="cutout8.webp" type="img/png" class="photo">     
+    </div>
+
+    
+</body>
+</html>
