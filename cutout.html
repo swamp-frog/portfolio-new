@@ -52,7 +52,7 @@
 
     html {
             /* animation: fade-in 1s ease-in-out; */
-            min-height: 200%;
+            /* min-height: 200%; */
             margin-top:9%;
             /* animation: blur 0.5s forwards; */
             /* animation: opacity 0.2s forwards; */
@@ -69,39 +69,7 @@
         padding-bottom: 20vh;
         }
 
-    .flex-parent {
-        /* background: #bfbfbf; */
-        /* background-color: whitesmoke; */
-        padding-top: 3%;
-        padding-left: 3%;
-        padding-right: 3%;
-        padding-bottom: 2%;
-        margin-left: 50%;
-        translate: -50%;
-        width: 100%;
-        position: fixed;
-        display: flex;
-        top:0%;
-        left: 0;
-        z-index: 9;
-        justify-content: space-between;
-        align-items: center;
-        transition: background-color 0.5s ease-in-out;
-      }
-
-    .itakelessspace {
-      display:flex;
-      flex-direction: row;
-      text-align: center;
-      background-color:lightblue;
-      transition: background-color 0.5s ease-in-out;  
-      }
-      
-      /* .itakelessspace:hover {
-      background-color: lightblue;
-      color:black;
-      transition: background-color 1s;
-      } */
+   
     .bigcenterimagecontainer {
     z-index: 1;
     flex-basis: 65%;
@@ -111,21 +79,30 @@
     background-position: center;
     width: 75%;
     height: auto;
-    left:48%;
+    left:50%;
     top:-10vh;
     transform: translatex(-50%);
     /* overflow: hidden; */
     overflow: visible;
     }
     .photo{
-    width: auto;
-    height: 100vh;
+    width: 100%;
+    height: auto;
     margin: 0%;
-    /* animation: blur 4s ease-in-out; */
     transition: filter 5s ease-in-out;
     }
-    .photo:hover{
-    /* filter: blur(0px); */
+    .photovertical{
+    width: 100%;
+    height: auto;
+    margin: 0%;
+    transition: filter 5s ease-in-out;
+    }
+    .photowide{
+    width: 80%;
+    transform: translateX(12%);
+    height: auto;
+    margin: 0%;
+    transition: filter 5s ease-in-out;
     }
     .description{
     position: fixed;
@@ -145,24 +122,35 @@
     background: rgb(158, 207, 223);
     color: black;
     }
-    </style>
-    </head>
+@media (max-width: 800px) {
+body{
+padding-bottom: 35vh;
+}
+.bigcenterimagecontainer{
+width: 60%;
+top:7vh;
+}
+.photovertical{
+width: 90%;
+transform: translateX(10%);
+aspect-ratio: 3 / 4;
+object-fit: cover;
+}
+}
+</style>
+</head>
 <body>
-    <div class="flex-parent">
-    <!-- <div class="itakelessspace">Through the Blinds</div> -->
-    </div>
-
 <!-- <div class="description">"Cut Outs"<br><br>What is pop art really? This photography series attempts to emulate the art current by capturing motion as series of frames.<br><br>photography, 2025</div> -->
 
     <div class="bigcenterimagecontainer">
         <img src="cutout1.webp" type="img/png" class="photo">
         <img src="cutout2.webp" type="img/png" class="photo">
         <img src="cutout3.webp" type="img/png" class="photo">
-        <img src="cutout4.webp" type="img/png" class="photo">
-        <img src="cutout5.webp" type="img/png" class="photo">
-        <img src="cutout6.webp" type="img/png" class="photo">
-        <img src="cutout7.webp" type="img/png" class="photo">
-        <img src="cutout8.webp" type="img/png" class="photo">     
+        <img src="cutout4.webp" type="img/png" class="photovertical">
+        <img src="cutout5.webp" type="img/png" class="photowide">
+        <img src="cutout6.webp" type="img/png" class="photowide">
+        <img src="cutout7.webp" type="img/png" class="photovertical">
+        <img src="cutout8.webp" type="img/png" class="photovertical">     
     </div>
 
     
