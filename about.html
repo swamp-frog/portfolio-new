@@ -421,17 +421,31 @@
 
         <p class="descriptionmobile">David Mihai is a graphic design student at the Artez University, Arnhem, NL. He spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities.</p>
         <!-- <p style="white-space: pre; margin-bottom: 4px">contact me: d.mihai@student.artez.nl<br>follow me: davidmihai.04<br>find me: 51.983871 5.894240</p> -->
-        <p class="plink"><a class="downloadportfolio whitehover" href="portfolioy3.pdf" target="_blank">download portfolio</a><a class="bar"> | </a><a class="downloadcv whitehover" href="cv.pdf" target="_blank"="">download cv</a></p>
+        <p class="plink"><!--<a class="downloadportfolio whitehover" href="portfolioy3.pdf" target="_blank">portfolio pdf</a><a class="bar"> | </a>--><a class="downloadcv whitehover" href="cv.pdf" target="_blank"="">open cv pdf</a></p>
 
-        <p class="p"><a class="whitehover" href="mailto:d.mihai@student.artez.nl">mail me: d.mihai@student.artez.nl</a> | <a class="whitehover" href="https://www.instagram.com/davidmihai.04?igsh=MWs0eTY2a2xxOWxsaw%3D%3D&utm_source=qr">follow me: davidmihai.04</a> | <a href="findme.html">find me: 51.983871 5.894240</a></p>
+        <p class="p"><a class="whitehover" id="mailto" href="">mail me here</a> | <a class="whitehover" id="follow" href="">follow me here</a> | <a href="findme.html">find me here</a></p>
 
-        <p class="pmobile"><a class="whitehover" href="https://www.instagram.com/davidmihai.04?igsh=MWs0eTY2a2xxOWxsaw%3D%3D&utm_source=qr">follow me: davidmihai.04</a><br><a class="whitehover" href="mailto:d.mihai@student.artez.nl">mail me: d.mihai@student.artez.nl</a><br><a class="whitehover" href="findme.html">find me: 51.983871 5.894240</a></p>
+        <p class="pmobile"><a class="whitehover" id="followmobile" href="">follow me here</a><br><a class="whitehover" id="mailtomobile" href="">mail me here</a><br><a class="whitehover" href="findme.html">find me here</a></p>
         <!-- | <a href="https://www.artez.nl/en/programmes/bachelor/graphic-design-arnhem">Graphic Design Artez University</a> -->
         </div>
         <!-- <div class="longdescription"><p class="p" style="white-space:pre;">David is currently coming up with ideas from the <br>graphic design department at Artez University.<br></p></div> -->
     </body>
 </head>
 <script>
+
+    let text1 = "d.mihai";
+    let text2 = "@student.artez.nl";
+    let combinetext = "mailto:" + text1 + text2;
+
+    document.getElementById('mailto').href = combinetext;
+    document.getElementById('mailtomobile').href = combinetext;
+
+    let text3 = "https://www.instagram.com/davidm";
+    let text4 = "ihai.04?igsh=MWs0eTY2a2xxOWxsaw%3D%3D&utm_source=qr"
+    let combinetext2 = text3 + text4;
+
+    document.getElementById('follow').href = combinetext2;
+    document.getElementById('followmobile').href = combinetext2;
 
     // const card = document.getElementById('card')
     // const flipper = document.getElementById('flipper')
@@ -502,5 +516,7 @@ audio.volume = 0.1;
 setTimeout (() => {
   audio.play();
 }, 0);
+
+
 </script>
 </html>
