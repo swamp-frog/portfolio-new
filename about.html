@@ -387,6 +387,33 @@
         top: 10vh
         }
         }
+/* .clipfront{
+position: fixed;
+width: 10%;
+height: auto;
+top: 18%;
+left: 50%;
+transform: translate(-50%);
+z-index: 100;
+} */
+/* .clipback{
+position: fixed;
+width: 10%;
+height: auto;
+top: 18%;
+left: 50%;
+transform: translate(-50%);
+z-index: 1;
+} */
+/* .portrait{
+position: fixed;
+width: 6%;
+height: auto;
+top: 18%;
+left: 50%;
+transform: translate(-50%);
+z-index: 10;
+} */
 </style>
 
 <head>
@@ -404,12 +431,17 @@
 <div class="flipper" id="flipper">
     <div class="card cardhiddden" id="card">
         <div class="front"><img src="instaxdavid.webp"></div>
+        <!-- <div class="front"><img class="portrait" src="portrait.webp"></div> -->
         <div class="back"><img src="instaxdavidback.png">
         <!-- <div class="backtext"><p class="p">David spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities</p></div> -->
     </div>
         
     </div>
 </div>
+<!-- <div>
+    <img class="clipfront" src="clip-front.webp">
+    <img class="clipback" src="clip-back.webp">
+</div> -->
         <!-- <div class="wave-text">
         David spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities.
         </div> -->
@@ -417,15 +449,16 @@
         <!-- <div class="cornercard" id="cornercard"><img src="instaxdavidback.png"><div class="backtext">David studies graphic design at Artez. He makes books, zines, posers and other types of printed matter. He also designs website pages.</div></div> -->
 
          <div class="footer">
-        <p class="description">David Mihai is a graphic design student at the Artez University, Arnhem, NL. He spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities. His works include books, zines, posters, web pages. David often works with photography and printing, going backwards and forwards between machines that capture and ones that replicate.</p>
+        <p class="description">David Mihai is a graphic design student at the Artez University in Arnhem, NL. He spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities. His works include books, zines, posters, web pages. David often works with photography and printing, going backwards and forwards between machines that capture and ones that replicate.</p>
+        <!-- <p class="description">Hi<br>I'm David Mihai. I study graphic design at Artez University, in Arnhem, NL. I spend my time cutting, pasting, mashing and breaking stuff in search of visual possibilities. My works so far include books, zines, posters and web pages. I often work with photography and printing, going backwards and forwards between machines that capture and ones that replicate.</p> -->
 
-        <p class="descriptionmobile">David Mihai is a graphic design student at the Artez University, Arnhem, NL. He spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities.</p>
+        <p class="descriptionmobile">David Mihai is a graphic design student at the Artez University in Arnhem, NL. He spends his time cutting, pasting, mashing and breaking stuff in search of visual possibilities.</p>
         <!-- <p style="white-space: pre; margin-bottom: 4px">contact me: d.mihai@student.artez.nl<br>follow me: davidmihai.04<br>find me: 51.983871 5.894240</p> -->
         <p class="plink"><!--<a class="downloadportfolio whitehover" href="portfolioy3.pdf" target="_blank">portfolio pdf</a><a class="bar"> | </a>--><a class="downloadcv whitehover" href="basic-cv.pdf" target="_blank"="">open cv pdf</a></p>
 
         <p class="p"><a class="whitehover" id="mailto" href="">mail me here</a> | <a class="whitehover" id="follow" href="">follow me here</a> | <a href="findme.html">find me here</a></p>
 
-        <p class="pmobile"><a class="whitehover" id="followmobile" href="">follow me here</a><br><a class="whitehover" id="mailtomobile" href="">mail me here</a><br><a class="whitehover" href="findme.html">find me here</a></p>
+        <p class="pmobile"><a class="whitehover" id="followmobile" href="">follow me here</a> | <a class="whitehover" id="mailtomobile" href="">mail me here</a> | <a class="whitehover" href="findme.html">find me here</a></p>
         <!-- | <a href="https://www.artez.nl/en/programmes/bachelor/graphic-design-arnhem">Graphic Design Artez University</a> -->
         </div>
         <!-- <div class="longdescription"><p class="p" style="white-space:pre;">David is currently coming up with ideas from the <br>graphic design department at Artez University.<br></p></div> -->
@@ -446,6 +479,8 @@
 
     document.getElementById('follow').href = combinetext2;
     document.getElementById('followmobile').href = combinetext2;
+
+    let text5
 
     // const card = document.getElementById('card')
     // const flipper = document.getElementById('flipper')
