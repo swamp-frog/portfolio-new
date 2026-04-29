@@ -309,7 +309,7 @@
             <!-- <img src="blue-map.png" class="baseimage"> -->
             <!-- <img src="onionhand2.png" class="baseimage"> -->
             <!-- <img src="onionhand.png" class="overlay"> -->
-            <video class="baseimage" width="100%" autoplay loop muted><source src="IMG_3047.mov" type="video/mp4"></video>
+            <!-- <video class="baseimage" width="100%" autoplay loop muted><source src="IMG_3047.mov" type="video/mp4"></video> -->
             <!-- <img src="IMG_3029.png" class="overlay"> -->
             <!-- <img src="poetrybook5home.png" class="overlay"> -->
             <!-- <img src="poetrybook3home.png" class="overlay"> -->
@@ -326,6 +326,7 @@
             <!-- <img src="orange-street-4home.jpg" class="overlay"> -->
             <img src="boat.webp" class="overlay">
             <img src="pip.webp" class="overlay">
+            <img src="brown-paper.webp" class="baseimage">
             
     </div>
     </main>
@@ -336,49 +337,66 @@
       </div>
 <script>
       
+// const overlays = document.querySelectorAll('.overlay');
+// const baseimage = document.querySelector('.baseimage');
+
+//     overlays.forEach(img => {
+
+//       img.addEventListener('click', function (e) {
+//         console.log(e.target);  
+//         // e.target.style.display = "none";
+//         e.target.style.opacity = "0";
+//       });
+    
+
+//       img.addEventListener("transitionend", function() {
+//         img.style.display = "none";
+//     });
+// });
+
+// baseimage.addEventListener('click', function () {
+//   overlays.forEach(img => {
+//     img.style.display = "block";
+//     img.style.opacity = "1";
+// });
+// });
+
+
+
 const overlays = document.querySelectorAll('.overlay');
-const baseimage = document.querySelector('.baseimage');
+let currentIndex = Math.floor(Math.random() * overlays.length);
 
-    overlays.forEach(img => {
-
-      img.addEventListener('click', function (e) {
-        console.log(e.target);  
-        // e.target.style.display = "none";
-        e.target.style.opacity = "0";
-      });
-    
-
-      img.addEventListener("transitionend", function() {
-        img.style.display = "none";
-    });
+// initial setup
+overlays.forEach((img, i) => {
+  img.style.opacity = (i === currentIndex) ? "1" : "0";
+  img.style.zIndex = (i === currentIndex) ? "2" : "1";
 });
 
-baseimage.addEventListener('click', function () {
-  overlays.forEach(img => {
-    img.style.display = "block";
-    img.style.opacity = "1";
-});
-});
-    //     const buttons = document.querySelectorAll('[data-target]');
-    //     const iframes = document.querySelectorAll('.iframe');
+function shuffleImages() {
+  let nextIndex;
 
-    // buttons.forEach(button => {
-    //     button.addEventListener('click', () => {
-    //     const targetId = button.getAttribute('data-target');
-    //     const targetIframe = document.getElementById(targetId);
-        
+  do {
+    nextIndex = Math.floor(Math.random() * overlays.length);
+  } while (nextIndex === currentIndex);
 
-    //     iframes.forEach(frame => frame.classList.add('hidden'));
+  const current = overlays[currentIndex];
+  const next = overlays[nextIndex];
 
-        
+  // put next image UNDER current one
+  next.style.zIndex = "1";
+  current.style.zIndex = "2";
 
-    //     targetIframe.classList.remove('hidden');
-    // });
-    // });
+  // make sure next is visible underneath first
+  next.style.opacity = "1";
 
+  // then fade out the current (reveals next below)
+  current.style.opacity = "0";
 
-    
-    </script>
+  currentIndex = nextIndex;
+}
+
+setInterval(shuffleImages, 4000);
+</script>
     
   </body>
 </html>
