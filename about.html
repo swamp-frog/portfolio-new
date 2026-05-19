@@ -470,94 +470,28 @@ z-index: 10;
         </div>
         <!-- <div class="longdescription"><p class="p" style="white-space:pre;">David is currently coming up with ideas from the <br>graphic design department at Artez University.<br></p></div> -->
     </body>
-</head>
 <script>
+let text1 = "d.mihai";
+      let text2 = "@student.artez.nl";
+      let combinetext = "mailto:" + text1 + text2;
 
-    let text1 = "d.mihai";
-    let text2 = "@student.artez.nl";
-    let combinetext = "mailto:" + text1 + text2;
+      document.getElementById('mailto').href = combinetext;
+      document.getElementById('mailtomobile').href = combinetext;
 
-    document.getElementById('mailto').href = combinetext;
-    document.getElementById('mailtomobile').href = combinetext;
+      const card = document.getElementById('card');
+      const flipper = document.getElementById('flipper');
 
-    let text3 = "https://www.instagram.com/davidm";
-    let text4 = "ihai.04?igsh=MWs0eTY2a2xxOWxsaw%3D%3D&utm_source=qr"
-    let combinetext2 = text3 + text4;
-
-    document.getElementById('follow').href = combinetext2;
-    document.getElementById('followmobile').href = combinetext2;
-
-    let text5
-
-    // const card = document.getElementById('card')
-    // const flipper = document.getElementById('flipper')
-
-    // card.addEventListener ('click', () =>{
-    //     card.style.transform = "rotateY(-180deg)";
-    //     flipper.style.marginLeft = "64%";
-    //     // flipper.style.scale = "120%";
-    //     // card.style.width = "600px";
-    // });
-
-    const card = document.getElementById('card')
-    const cornercard = document.getElementById('cornercard')
-    const flipper = document.getElementById('flipper')
-
-    // let clickCount = 0;
-
-    // card.addEventListener ('click', () =>{
-    //     clickCount++;
-
-    //     if (clickCount === 1) {card.style.transform = "rotate(170deg)";}
-    //     else if (clickCount ===2) {card.style.transform = "rotate(0deg)";
-    //     clickCount = 0;}
-    // });
-
-
-
-
-    // let clickCount = 0;
-
-    // card.addEventListener ('click', () =>{
-    //     clickCount++;
-
-    //     if (clickCount === 1) {card.style.transform = "rotate(170deg)";}
-    //     else if (clickCount === 2) {card.style.transform = "rotate(220deg)"; flipper.style.marginTop = "-27%"; flipper.style.marginLeft = "65%";}
-    //     else {clickCount = 0;}
-    // });
-
-
-
-
-
-     card.addEventListener ('click', () =>{
+      card.addEventListener('click', () => {
         card.style.transform = "rotate(170deg)";
-    });
+      });
 
-
-
-
-
-
-    // card.addEventListener ('click', () =>{
-    //     card.style.transform = "rotate(-8deg)";
-    //     flipper.style.marginLeft = "38%";
-    //     cornercard.style.marginLeft = "46%";
-    //     cornercard.style.marginTop = "-16%";
-    //     cornercard.style.rotate = "4deg";
-    // });
-
-    // cornercard.addEventListener ('click', ()=>{
-    //     cornercard.style.marginTop = "0%";
-    //     cornercard.style.marginLeft = "80%";
-    // });
-
-
-    const audio = document.getElementById("sound");
-audio.volume = 0.1;
-setTimeout (() => {
-  audio.play();
-}, 0);
+      const audio = document.getElementById("sound");
+      if (audio) {
+        audio.volume = 0.1;
+        setTimeout(() => {
+          audio.play();
+        }, 0);
+      }
 
 
 </script>
