@@ -306,41 +306,18 @@
 
       <main>
       <div class="bigcenterimagecontainer">
-            <!-- <img src="blue-map.png" class="baseimage"> -->
-            <!-- <img src="onionhand2.png" class="baseimage"> -->
-            <!-- <img src="onionhand.png" class="overlay"> -->
-            <!-- <video class="baseimage" width="100%" autoplay loop muted><source src="IMG_3047.mov" type="video/mp4"></video> -->
-            <!-- <img src="IMG_3029.png" class="overlay"> -->
-            <!-- <img src="poetrybook5home.png" class="overlay"> -->
-            <!-- <img src="poetrybook3home.png" class="overlay"> -->
-            <!-- <img src="onfire-2.png" class="overlay">
-            <img src="onfire.png" class="overlay"> -->
-            <img src="sill2.webp" class="overlay">
-            <img src="sill1.webp" class="overlay">
-            <img src="smoking3.webp" class="overlay">
-            <img src="smoking1.webp" class="overlay">
-            <img src="shoestripping.webp" class="overlay">
-            <!-- <img src="cutout7home.webp" class="overlay"> -->
-            <!-- <img src="m1.webp" class="overlay">
-            <img src="m2.webp" class="overlay">
-            <img src="b1.webp" class="overlay">
-            <img src="b2.webp" class="overlay"> -->
-            <img src="faucet.webp" class="overlay">
-            <!-- <img src="texas.webp" class="overlay"> -->
-            <img src="cart.webp" class="overlay">
-            <img src="president.webp" class="overlay">
-            <img src="icecream.webp" class="overlay">
-            <img src="heineken.webp" class="overlay">
-            <!-- <img src="brown-paper.webp" class="overlay"> -->
-            <!-- <img src="brown-map.webp" class="overlay"> -->
-            <!-- <img src="yellow-2.png" class="overlay"> -->
-            <!-- <img src="cup.webp" class="overlay"> -->
-            <!-- <img src="spray.webp" class="overlay"> -->
-            <!-- <img src="orange-street-4home.jpg" class="overlay"> -->
-            <!-- <img src="boat.webp" class="overlay"> -->
-            <!-- <img src="pip.webp" class="overlay"> -->
-            <!-- <img src="brown-paper.webp" class="baseimage"> -->
-            
+      <img src="sill2.webp" class="overlay">
+      <img src="sill1.webp" class="overlay">
+      <img src="smoking3.webp" class="overlay">
+      <img src="smoking1.webp" class="overlay">
+      <img src="shoestripping.webp" class="overlay">
+      <img src="faucet.webp" class="overlay">
+      <img src="cart.webp" class="overlay">
+      <img src="president.webp" class="overlay">
+      <img src="icecream.webp" class="overlay">
+      <img src="heineken.webp" class="overlay">
+      <img src="forkids.webp" class="overlay">   
+      <!-- <img src="speakerhome2.webp" class="overlay"> -->
     </div>
     </main>
     <!-- <video class="gif" width="100%" autoplay loop muted><source src="test.mov" type="video/mp4"></video> -->
@@ -376,36 +353,93 @@
 
 
 
-const overlays = document.querySelectorAll('.overlay');
-let currentIndex = Math.floor(Math.random() * overlays.length);
+// const overlays = document.querySelectorAll('.overlay');
+// let currentIndex = Math.floor(Math.random() * overlays.length);
 
-// initial setup
-overlays.forEach((img, i) => {
-  img.style.opacity = (i === currentIndex) ? "1" : "0";
-  img.style.zIndex = (i === currentIndex) ? "2" : "1";
+// // initial setup
+// overlays.forEach((img, i) => {
+//   img.style.opacity = (i === currentIndex) ? "1" : "0";
+//   img.style.zIndex = (i === currentIndex) ? "2" : "1";
+// });
+
+// function shuffleImages() {
+//   let nextIndex;
+
+//   do {
+//     nextIndex = Math.floor(Math.random() * overlays.length);
+//   } while (nextIndex === currentIndex);
+
+//   const current = overlays[currentIndex];
+//   const next = overlays[nextIndex];
+
+//   // put next image UNDER current one
+//   next.style.zIndex = "1";
+//   current.style.zIndex = "2";
+
+//   // make sure next is visible underneath first
+//   next.style.opacity = "1";
+
+//   // then fade out the current (reveals next below)
+//   current.style.opacity = "0";
+
+//   currentIndex = nextIndex;
+// }
+
+// setInterval(shuffleImages, 3300);
+
+
+const overlays = Array.from(document.querySelectorAll('.overlay'));
+
+// Standard Fisher-Yates shuffle function
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// Create a randomized order of images
+let sequence = shuffle([...overlays]);
+let sequenceIndex = 0;
+
+// Initial setup: display the first image in the shuffled sequence
+let current = sequence[sequenceIndex];
+
+overlays.forEach(img => {
+  img.style.opacity = (img === current) ? "1" : "0";
+  img.style.zIndex = (img === current) ? "2" : "1";
 });
 
 function shuffleImages() {
-  let nextIndex;
+  sequenceIndex++;
 
-  do {
-    nextIndex = Math.floor(Math.random() * overlays.length);
-  } while (nextIndex === currentIndex);
+  // When we've shown all images, re-shuffle the deck for the next round
+  if (sequenceIndex >= sequence.length) {
+    const lastShown = current;
+    
+    // Keep shuffling until the first image of the new round isn't the same as the last image of the old round
+    do {
+      sequence = shuffle([...overlays]);
+    } while (overlays.length > 1 && sequence[0] === lastShown);
 
-  const current = overlays[currentIndex];
-  const next = overlays[nextIndex];
+    sequenceIndex = 0;
+  }
 
-  // put next image UNDER current one
+  const next = sequence[sequenceIndex];
+
+  // Put next image UNDER current one
   next.style.zIndex = "1";
   current.style.zIndex = "2";
 
-  // make sure next is visible underneath first
+  // Make sure next is visible underneath
   next.style.opacity = "1";
 
-  // then fade out the current (reveals next below)
+  // Fade out current (revealing next)
   current.style.opacity = "0";
 
-  currentIndex = nextIndex;
+  // Move forward
+  current = next;
 }
 
 setInterval(shuffleImages, 3300);
