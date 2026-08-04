@@ -151,22 +151,23 @@
     position: fixed;
     background-size: cover;
     background-position: center;
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
     margin-bottom: 5%;
     }
     .bigcenterimagecontainer img {
     display: block;
+    height: 100%;
     width: 100%;
-    height: auto;
     }
     .overlay {
     position: absolute;
     top: 0%;
     left: 0%;
     width: 100%;
+    object-fit: cover;
     opacity: 1;
     transition: opacity 0.6s ease-in-out;
     z-index: 10;
@@ -269,37 +270,32 @@
     -ms-user-select: none;
     user-select: none;
     }
-    @media (max-width: 800px) {
-    .flex-parent{
-    width: 100%;
-    font-size: 10pt;
-    }
     .itakelessspace{
     /* background-color: transparent; */
-    }
-    .bigcenterimagecontainer{
-    height: 100%;
-    width: auto;
-    left: -100vw;
-    }
-    .bigcenterimagecontainer img{
-    height: 100vh;
-    width: auto;
     }
     .bigcenterimagecontainer video{
     height: 100vh;
     width: auto;
     }
-    }
+    
     @media (max-width: 800px) {
+    .flex-parent{
+    width: 100%;
+    font-size: 10pt;
+    }
+
     .bigcenterimagecontainer img{
     height: auto;
     width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center;
     }
     }
     </style>
   </head>
-<title>My Links</title>
   <body>
     
     
