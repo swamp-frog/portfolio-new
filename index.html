@@ -283,17 +283,19 @@
     width: 100%;
     font-size: 10pt;
     }
-
+    .bigcenterimagecontainer{
+    height: 100dvh;
+    width: 100vw;
+    }
     .bigcenterimagecontainer img{
     position: absolute;
-    height: auto;
-    width: 100vw;
-    max-height: 100dhv;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
-    object-position: center;
+    width: 100vw;
+    height: auto;
+    max-height: 100dvh;
+    object-fit: contain;
     }
     }
     </style>
