@@ -152,6 +152,7 @@
     background-color: lightgreen;
     } 
     .flipper{
+    will-change: transform;
     position: fixed;
     width: fit-content;
     /* transform-origin: 50% 50%; */
@@ -164,24 +165,37 @@
     transition: margin-left 1s ease-in-out, scale 0.6s ease-in-out, margin-top 1s ease-in-out;
     }
     .card{
+    will-change: transform;
     width: 30vh;
     height: 30vh;
-    /* width: 10vw;
-    height: 10vh; */
     position: relative;
-    /* transform-style: preserve-3d; */
     transform-origin: 60% 30%;    
-    /* transform-origin: 70% 10%; */
-    /* transform-origin: 10% 10%; */
     z-index: 10;
     cursor: pointer;
     transition: transform 0.7s ease-in-out, margin-top 0.7s ease-in-out;
-    /* transition: transform 0.5s ease-in-out, margin-top 0.7s ease-in-out; */
-    -webkit-touch-callout: none;
+    
+    /* Smooth GPU Transitions */
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), margin-top 0.7s ease-in-out;
+  transform: translateZ(0); /* Forces GPU rendering pipeline on iOS */
+
+  /* iOS Rendering fixes */
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  /* Disable selection & tap highlights */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+    /* -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+    user-select: none; */
     }
     .card img{
     width: 100%;
@@ -459,55 +473,27 @@
         <!-- <div class="longdescription"><p class="p" style="white-space:pre;">David is currently coming up with ideas from the <br>graphic design department at Artez University.<br></p></div> -->
     </body>
 <script>
-// let text1 = "d.mihai";
-//       let text2 = "@student.artez.nl";
-//       let combinetext = "mailto:" + text1 + text2;
-
-//       document.getElementById('mailto').href = combinetext;
-//       document.getElementById('mailtomobile').href = combinetext;
-
-//       const card = document.getElementById('card');
-//       const flipper = document.getElementById('flipper');
-
-//       card.addEventListener('click', () => {
-//         card.style.transform = "rotate(170deg)";
-//       });
-
-
-
-
-
-
-
-
 let text1 = "d.mihai";
-let text2 = "@student.artez.nl";
-let combinetext = "mailto:" + text1 + text2;
+      let text2 = "@student.artez.nl";
+      let combinetext = "mailto:" + text1 + text2;
 
-document.getElementById('mailto').href = combinetext;
-document.getElementById('mailtomobile').href = combinetext;
+      document.getElementById('mailto').href = combinetext;
+      document.getElementById('mailtomobile').href = combinetext;
 
-const card = document.getElementById('card');
-const flipper = document.getElementById('flipper');
+      const card = document.getElementById('card');
+      const flipper = document.getElementById('flipper');
 
-// Function to trigger the image transform
-function handleCardAction(e) {
-  card.style.transform = "rotate(170deg)";
-}
+      card.addEventListener('click', () => {
+        card.style.transform = "rotate(170deg)";
+      });
 
-// 1. Works for standard desktop clicks
-card.addEventListener('click', handleCardAction);
 
-// 2. Triggers immediately as soon as a finger touches or drags over the image on iOS/mobile
-card.addEventListener('touchstart', handleCardAction, { passive: true });
-card.addEventListener('touchmove', handleCardAction, { passive: true });
 
-const audio = document.getElementById("sound");
-if (audio) {
-  audio.volume = 0.1;
-  setTimeout(() => {
-    audio.play();
-  }, 0);
-}
+
+
+
+
+
+
 </script>
 </html>
