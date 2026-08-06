@@ -174,23 +174,6 @@
     cursor: pointer;
     transition: transform 0.7s ease-in-out, margin-top 0.7s ease-in-out;
     
-    /* Smooth GPU Transitions */
-  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), margin-top 0.7s ease-in-out;
-  transform: translateZ(0); /* Forces GPU rendering pipeline on iOS */
-
-  /* iOS Rendering fixes */
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-
-  /* Disable selection & tap highlights */
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
     /* -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
