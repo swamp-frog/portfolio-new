@@ -459,44 +459,55 @@
         <!-- <div class="longdescription"><p class="p" style="white-space:pre;">David is currently coming up with ideas from the <br>graphic design department at Artez University.<br></p></div> -->
     </body>
 <script>
+// let text1 = "d.mihai";
+//       let text2 = "@student.artez.nl";
+//       let combinetext = "mailto:" + text1 + text2;
+
+//       document.getElementById('mailto').href = combinetext;
+//       document.getElementById('mailtomobile').href = combinetext;
+
+//       const card = document.getElementById('card');
+//       const flipper = document.getElementById('flipper');
+
+//       card.addEventListener('click', () => {
+//         card.style.transform = "rotate(170deg)";
+//       });
+
+
+
+
+
+
+
+
 let text1 = "d.mihai";
-      let text2 = "@student.artez.nl";
-      let combinetext = "mailto:" + text1 + text2;
+let text2 = "@student.artez.nl";
+let combinetext = "mailto:" + text1 + text2;
 
-      document.getElementById('mailto').href = combinetext;
-      document.getElementById('mailtomobile').href = combinetext;
+document.getElementById('mailto').href = combinetext;
+document.getElementById('mailtomobile').href = combinetext;
 
-      const card = document.getElementById('card');
-      const flipper = document.getElementById('flipper');
+const card = document.getElementById('card');
+const flipper = document.getElementById('flipper');
 
-      card.addEventListener('click', () => {
-        card.style.transform = "rotate(170deg)";
-      });
+// Function to trigger the image transform
+function handleCardAction(e) {
+  card.style.transform = "rotate(170deg)";
+}
 
-//     const card = document.getElementById('card');
-// const flipper = document.getElementById('flipper');
+// 1. Works for standard desktop clicks
+card.addEventListener('click', handleCardAction);
 
-// // Track the number of clicks
-// let clickCount = 0;
+// 2. Triggers immediately as soon as a finger touches or drags over the image on iOS/mobile
+card.addEventListener('touchstart', handleCardAction, { passive: true });
+card.addEventListener('touchmove', handleCardAction, { passive: true });
 
-// card.addEventListener('click', () => {
-//   clickCount++;
-
-//   if (clickCount === 1) {
-//     // First click: Rotate 170deg
-//     card.style.transform = "translate(0px, 0px) rotate(170deg)";
-//   } else if (clickCount === 2) {
-//     // Second click: New position parameters (e.g., rotate more and move)
-//     card.style.transform = "translate(100px, 900px) rotate(60deg)";}
-  
-      const audio = document.getElementById("sound");
-      if (audio) {
-        audio.volume = 0.1;
-        setTimeout(() => {
-          audio.play();
-        }, 0);
-      }
-    // });
-
+const audio = document.getElementById("sound");
+if (audio) {
+  audio.volume = 0.1;
+  setTimeout(() => {
+    audio.play();
+  }, 0);
+}
 </script>
 </html>
