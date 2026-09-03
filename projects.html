@@ -402,30 +402,42 @@
 }
 } */
 @media (max-width: 800px) {
-  /* Hide mobile-specific elements completely */
+  /* Separates navigation bar and project options */
+  .flex-parent-2 {
+    top: 50px !important;
+    margin-top: 0 !important;
+  }
+
   .descriptionmobile {
     display: none !important;
   }
 
-  /* Position desktop description pinned flush to the bottom */
+  /* Pinned bottom panel */
   .description {
     display: block;
     position: fixed;
     bottom: 0;
     left: 2%;
     width: 96%;
-    max-height: 80vh;
+    max-height: 70vh;
     font-size: 8pt;
-    z-index: 12;
+    z-index: 20;
     white-space: pre-wrap;
-    padding: 10px;
+    padding: 12px;
     box-sizing: border-box;
     cursor: pointer;
     overflow-y: auto;
-    /* Keeps card anchored at the bottom, peeking up by ~40px */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
     transform: translateY(calc(100% - 40px));
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.6s ease-in-out;
   }
+
+  /* Expanded state styling */
+  .description.expanded {
+    transform: translateY(0) !important;
+  }
+}
 
   /* Slide up to reveal full content when tapped */
   .description.expanded {
@@ -535,229 +547,16 @@ const buttons = document.querySelectorAll('[data-target]');
 const iframes = document.querySelectorAll('.iframe');
 const descriptions = document.querySelectorAll('.description');
 
-    let activeIframe = null;
-    let activeDesc = null;
+let activeIframe = null;
+let activeDesc = null;
+let isExpanded = false;
+let startY = 0;
 
-    function clearActiveButtons() {
-    buttons.forEach(btn => btn.classList.remove('active-button'))
-  }
-
-    buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const targetId = button.dataset.target;
-        const targetIframe = document.getElementById(targetId);
-        const targetDesc = document.getElementById(targetId + '-desc');
-        const targetDescMobile = document.getElementById(targetId + '-desc-mobile');
-
-        // Toggle off active tab if clicked again
-        if (activeIframe === targetIframe) {
-            targetIframe.classList.add('hidden');
-            targetIframe.classList.remove('opacityanimation');
-            if (targetDesc) targetDesc.classList.add('hidden');
-            if (targetDescMobile) targetDescMobile.classList.add('hidden');
-            activeIframe = null;
-            activeDesc = null;
-            clearActiveButtons();
-            return;
-        }
-
-        // Hide all frames and descriptions
-        iframes.forEach(frame => frame.classList.add('hidden'));
-        descriptions.forEach(d => d.classList.add('hidden'));
-        document.querySelectorAll('.descriptionmobile').forEach(d => d.classList.add('hidden'));
-
-        clearActiveButtons();
-
-        // Reveal selected tab elements
-        targetIframe.classList.remove('hidden');
-        targetIframe.classList.add('opacityanimation');
-        if (targetDesc) targetDesc.classList.remove('hidden');
-        if (targetDescMobile) targetDescMobile.classList.remove('hidden');
-
-        button.classList.add('active-button');
-        activeIframe = targetIframe;
-        activeDesc = targetDesc;
-    });
-});
-if (buttons.length > 0) {
-  buttons[0].click();
+function clearActiveButtons() {
+  buttons.forEach(btn => btn.classList.remove('active-button'));
 }
 
-
-window.addEventListener('DOMContentLoaded', () => {
-  const firstIframe = document.getElementById('orange');
-
-  if (!firstIframe.src) {
-    firstIframe.src = firstIframe.dataset.src;
-  }
-});
-
-      window.addEventListener('DOMContentLoaded', () => {
-  const iframes = document.querySelectorAll('.iframe');
-
-  requestIdleCallback(() => {
-    iframes.forEach(frame => {
-      if (!frame.src) {
-        frame.src = frame.dataset.src;
-      }
-    });
-  });
-});
-// const audio = document.getElementById("sound");
-// audio.volume = 0.1;
-// setTimeout (() => {
-//   audio.play();
-// }, 850);
-
-//     if (video.paused){
-//       video.play();
-//     } else {
-//       video.pause();
-//     }
-
-//     let activeIframe = null;
-//     let activeDesc = null;
-
-//     function clearActiveButtons() {
-//     buttons.forEach(btn => btn.classList.remove('active-button'))
-//   }
-
-//     const buttons = document.querySelectorAll('[data-target]');
-//     const iframes = document.querySelectorAll('.iframe');
-
-//     buttons.forEach(button => {
-//         button.addEventListener('click', () => {
-//         const targetId = button.getAttribute('data-target');
-//         const targetIframe = document.getElementById(targetId);
-//         const targetDesc = document.getElementById(targetId + '-desc');
-        
-
-//         if (activeIframe === targetIframe) {
-//             targetIframe.classList.add('hidden');
-//             targetIframe.classList.remove('opacityanimation');
-//             if (targetDesc) targetDesc.classList.add('hidden');
-//             activeIframe = null;
-//             activeDesc = null;
-//             clearActiveButtons();
-//             return;
-//             buttons.forEach(btn => btn.classList.add('white'));
-//         return;
-//         }
-        
-
-//         iframes.forEach(frame => frame.classList.add('hidden'));
-//         document.querySelectorAll('.orangedesc').forEach(desc => desc.classList.add('hidden'));
-//         clearActiveButtons();
-
-          
-//         buttons.forEach(btn => btn.classList.add('white'));
-//         button.classList.remove('white');
-
-
-//         targetIframe.classList.remove('hidden');
-//         targetIframe.classList.add('opacityanimation');
-//         if (targetDesc) targetDesc.classList.remove('hidden');
-
-//         button.classList.add('active-button');
-
-//         activeIframe = targetIframe;
-//         activeDesc = targetDesc;
-//     });
-//     });
-// if (buttons.length > 0) {
-//   buttons[0].click();
-// }
-
-// const audio = document.getElementById("sound");
-// audio.volume = 0.1;
-// setTimeout (() => {
-//   audio.play();
-// }, 850);
-
-//     if (video.paused){
-//       video.play();
-//     } else {
-//       video.pause();
-//     }
-    
-
-// buttons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     const targetId = button.dataset.target;
-//     const targetIframe = document.getElementById(targetId);
-//     const targetDesc = document.getElementById(targetId + '-desc');
-//     const targetDescMobile = document.getElementById(targetId + '-desc-mobile');
-
-//     // Remove expanded state from all desktop descriptions
-//     descriptions.forEach(d => {
-//       d.classList.add('hidden');
-//       d.classList.remove('mobile-expanded');
-//     });
-
-//     if (activeIframe === targetIframe) {
-//       targetIframe.classList.add('hidden');
-//       targetIframe.classList.remove('opacityanimation');
-//       if (targetDesc) targetDesc.classList.add('hidden');
-//       if (targetDescMobile) targetDescMobile.classList.add('hidden');
-//       activeIframe = null;
-//       activeDesc = null;
-//       clearActiveButtons();
-//       return;
-//     }
-
-//     iframes.forEach(frame => frame.classList.add('hidden'));
-//     document.querySelectorAll('.descriptionmobile').forEach(d => d.classList.add('hidden'));
-
-//     clearActiveButtons();
-
-//     targetIframe.classList.remove('hidden');
-//     targetIframe.classList.add('opacityanimation');
-//     if (targetDesc) targetDesc.classList.remove('hidden');
-//     if (targetDescMobile) targetDescMobile.classList.remove('hidden');
-
-//     button.classList.add('active-button');
-//     activeIframe = targetIframe;
-//     activeDesc = targetDesc;
-//   });
-// });
-
-// // Mobile description tap-to-expand logic
-// document.querySelectorAll('.descriptionmobile').forEach(mobileDesc => {
-//   mobileDesc.addEventListener('click', () => {
-//     const baseId = mobileDesc.id.replace('-desc-mobile', '');
-//     const desktopDesc = document.getElementById(baseId + '-desc');
-
-//     if (desktopDesc) {
-//       mobileDesc.classList.add('hidden');
-//       desktopDesc.classList.remove('hidden');
-//       desktopDesc.classList.add('mobile-expanded');
-//     }
-//   });
-// });
-
-// // Tap full description to close back to mobile summary
-// descriptions.forEach(desktopDesc => {
-//   desktopDesc.addEventListener('click', () => {
-//     if (desktopDesc.classList.contains('mobile-expanded')) {
-//       const baseId = desktopDesc.id.replace('-desc', '');
-//       const mobileDesc = document.getElementById(baseId + '-desc-mobile');
-
-//       desktopDesc.classList.remove('mobile-expanded');
-//       desktopDesc.classList.add('hidden');
-//       if (mobileDesc) mobileDesc.classList.remove('hidden');
-//     }
-//   });
-// });
-
-
-
-
-
-
-// Global toggle state to keep all descriptions in sync
-let isExpanded = false;
-
-// Function to update the visual state of all descriptions
+// Sync the expansion state across all descriptions
 function syncExpansionState() {
   descriptions.forEach(desc => {
     if (isExpanded) {
@@ -768,22 +567,69 @@ function syncExpansionState() {
   });
 }
 
-// 1. Preserve and apply the global state whenever a tab is clicked
+// Handles main button/tab switching
 buttons.forEach(button => {
   button.addEventListener('click', () => {
+    const targetId = button.dataset.target;
+    const targetIframe = document.getElementById(targetId);
+    const targetDesc = document.getElementById(targetId + '-desc');
+
+    // Toggle off active tab if clicked again
+    if (activeIframe === targetIframe) {
+      targetIframe.classList.add('hidden');
+      targetIframe.classList.remove('opacityanimation');
+      if (targetDesc) targetDesc.classList.add('hidden');
+      activeIframe = null;
+      activeDesc = null;
+      clearActiveButtons();
+      return;
+    }
+
+    // Hide all frames and descriptions
+    iframes.forEach(frame => frame.classList.add('hidden'));
+    descriptions.forEach(d => d.classList.add('hidden'));
+
+    clearActiveButtons();
+
+    // Reveal selected tab elements
+    targetIframe.classList.remove('hidden');
+    targetIframe.classList.add('opacityanimation');
+    if (targetDesc) targetDesc.classList.remove('hidden');
+
+    button.classList.add('active-button');
+    activeIframe = targetIframe;
+    activeDesc = targetDesc;
+
+    // Preserve mobile expansion state across projects
     syncExpansionState();
   });
 });
 
-// 2. Event delegation: Tapping ANY description toggles ALL descriptions
+// Click fallback for desktop and touch tap detection for mobile
 document.body.addEventListener('click', (e) => {
   if (window.innerWidth <= 800) {
     const desc = e.target.closest('.description');
     if (desc) {
-      isExpanded = !isExpanded; // Flip state
-      syncExpansionState();     // Apply to all
+      isExpanded = !isExpanded;
+      syncExpansionState();
     }
   }
+});
+
+// Load first project by default
+if (buttons.length > 0) {
+  buttons[0].click();
+}
+
+// Idle lazy loading for remaining dynamic iframes
+window.addEventListener('DOMContentLoaded', () => {
+  requestIdleCallback(() => {
+    iframes.forEach(frame => {
+      if (!frame.src && frame.dataset.src) {
+        frame.src = frame.dataset.src;
+      }
+    });
+  });
 });
     </script>
 
