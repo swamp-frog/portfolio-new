@@ -402,6 +402,12 @@
 }
 } */
 @media (max-width: 800px) {
+  html, body {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: fixed;
+    width: 100%;
+  }
 .iframe {
     width: 200vw;
     min-height: 110vh;
@@ -456,12 +462,7 @@
   .description.expanded {
     transform: translateY(0) !important;
   }
-}
 
-  /* Slide up to reveal full content when tapped */
-  .description.expanded {
-    transform: translateY(0);
-  }
 }
   </style>
   </head>
@@ -649,6 +650,14 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+});
+
+// Prevent touch scrolling inside the description from bubbling up to the main page window
+descriptions.forEach(desc => {
+  desc.addEventListener('touchmove', (e) => {
+    // If text is scrollable, keep scrolling isolated to the description box
+    e.stopPropagation();
+  }, { passive: true });
 });
     </script>
 
