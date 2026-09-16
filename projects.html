@@ -16,6 +16,11 @@
             opacity: 1;
             }
           }
+          
+        @keyframes color{
+        0%{color: black;}
+        100%{color: gray;}
+        }
 
         @keyframes opacity{
             0%{opacity: 0%;}
@@ -435,6 +440,7 @@
 
   .descriptionmobile {
     display: none !important;
+    animation: color 1s ease-in-out;
   }
 
   /* Pinned bottom panel */
