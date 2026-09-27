@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>David Mihai</title>
+<title>David Mihai: Projects</title>
 <link rel="icon" type="image/png" href="favicon-test.png">
         
 <style>
@@ -16,6 +16,17 @@
             opacity: 1;
             }
           }
+          
+        @keyframes color{
+        0%{color: black;}
+        50%{color: gainsboro;}
+        100%{color: black;}
+
+        }
+        @keyframes colornone{
+        0%{color: black;}
+        100%{color: black;}
+        }
 
         @keyframes opacity{
             0%{opacity: 0%;}
@@ -435,10 +446,12 @@
 
   .descriptionmobile {
     display: none !important;
+
   }
 
   /* Pinned bottom panel */
   .description {
+    animation: color 4s ease-in-out infinite;
     display: block;
     position: fixed;
     bottom: 0;
@@ -461,6 +474,9 @@
   /* Expanded state styling */
   .description.expanded {
     transform: translateY(0) !important;
+    max-height: 35vh;
+    overflow-y: auto;
+    animation: colornone 1s;
   }
 
 }
