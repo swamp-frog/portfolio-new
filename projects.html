@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>David Mihai: Projects</title>
+<title>David Mihai</title>
 <link rel="icon" type="image/png" href="favicon-test.png">
         
 <style>
@@ -16,17 +16,6 @@
             opacity: 1;
             }
           }
-          
-        @keyframes color{
-        0%{color: black;}
-        50%{color: gainsboro;}
-        100%{color: black;}
-
-        }
-        @keyframes colornone{
-        0%{color: black;}
-        100%{color: black;}
-        }
 
         @keyframes opacity{
             0%{opacity: 0%;}
@@ -362,6 +351,7 @@
     z-index: 12;
     white-space: pre-wrap;
     display: none;
+    pointer-events: none;
 }
   /* @media (max-width: 800px) {
     .iframe {
@@ -412,6 +402,10 @@
     pointer-events: auto;
 }
 } */
+ .credit{
+    color: rgb(81, 144, 165);
+    cursor: pointer;
+ }
 @media (max-width: 800px) {
   html, body {
     overflow: hidden !important;
@@ -446,12 +440,10 @@
 
   .descriptionmobile {
     display: none !important;
-
   }
 
   /* Pinned bottom panel */
   .description {
-    animation: color 4s ease-in-out infinite;
     display: block;
     position: fixed;
     bottom: 0;
@@ -474,9 +466,7 @@
   /* Expanded state styling */
   .description.expanded {
     transform: translateY(0) !important;
-    max-height: 35vh;
-    overflow-y: auto;
-    animation: colornone 1s;
+    pointer-events: auto !important;
   }
 
 }
@@ -534,7 +524,9 @@
 <div class="description hidden" id="boombox-desc">"Boombox Introspective"<br><br>There is no better way to change the atmosphere than setting down a Boombox. What's more characteristic of 21st century ingenuity than making your own devices out of discarded equipment? Duchamp started in 1913 and with so much junk still around, making readymades is still relevant today. Mass production hasn't provided us with the endless supply of futuristic products we were promised and yet, this abundance of junk offers unlimited inspiration. A speaker like this could've been built decades ago, and it's still better than anything on AliExpress. But would it have?<br><br>sculpture, 2026</div>
 
 <div class="descriptionmobile hidden" id="uniforms-desc-mobile">"The Ideal President"<br><br>photography, uniforms, props 2026</div>
-<div class="description hidden" id="uniforms-desc">"The Ideal President"<br><br>By the year 2026 Crayola should have been in charge of the state uniforms, nurses should've been using Heineken to make you better and cops should have had rayguns. Alternative uniforms for an ideal reality. <br><br>photography, uniforms, props 2026</div>
+<div class="description hidden" id="uniforms-desc">"The Ideal President"<br><br>By the year 2026 Crayola should have been in charge of the state uniforms, nurses should've been using Heineken to make you better and cops should have had rayguns. Alternative uniforms for an ideal reality.<br><br>photography, uniforms, props 2026</div>
+
+<!-- <br><br>"<a class="credit" href="https://ameliasuor.cargo.site">Amelia Suor</a>" -->
 
         <div class="flex-parent">
             
@@ -587,6 +579,16 @@ let activeIframe = null;
 let activeDesc = null;
 let isExpanded = false;
 let startY = 0;
+
+function syncExpansionState() {
+  descriptions.forEach(desc => {
+    if (isExpanded) {
+      desc.classList.add('expanded');
+    } else {
+      desc.classList.remove('expanded');
+    }
+  });
+}
 
 function clearActiveButtons() {
   buttons.forEach(btn => btn.classList.remove('active-button'));
