@@ -16,6 +16,11 @@
             opacity: 1;
             }
           }
+          @keyframes blink{
+            0%{color: black;}
+            50%{color: rgb(180, 180, 180);}
+            100%{color: black;}
+          }
 
         @keyframes opacity{
             0%{opacity: 0%;}
@@ -351,7 +356,6 @@
     z-index: 12;
     white-space: pre-wrap;
     display: none;
-    pointer-events: none;
 }
   /* @media (max-width: 800px) {
     .iframe {
@@ -402,17 +406,8 @@
     pointer-events: auto;
 }
 } */
- .credit{
-    color: rgb(81, 144, 165);
-    cursor: pointer;
- }
 @media (max-width: 800px) {
-  html, body {
-    overflow: hidden !important;
-    height: 100vh !important;
-    position: fixed;
-    width: 100%;
-  }
+  
 .iframe {
     width: 200vw;
     min-height: 110vh;
@@ -461,12 +456,13 @@
     touch-action: pan-y;
     transform: translateY(calc(100% - 40px));
     transition: transform 0.6s ease-in-out;
+    animation: blink 5.5s ease-in-out infinite;
   }
 
   /* Expanded state styling */
   .description.expanded {
     transform: translateY(0) !important;
-    pointer-events: auto !important;
+    animation: none;
   }
 
 }
@@ -524,9 +520,7 @@
 <div class="description hidden" id="boombox-desc">"Boombox Introspective"<br><br>There is no better way to change the atmosphere than setting down a Boombox. What's more characteristic of 21st century ingenuity than making your own devices out of discarded equipment? Duchamp started in 1913 and with so much junk still around, making readymades is still relevant today. Mass production hasn't provided us with the endless supply of futuristic products we were promised and yet, this abundance of junk offers unlimited inspiration. A speaker like this could've been built decades ago, and it's still better than anything on AliExpress. But would it have?<br><br>sculpture, 2026</div>
 
 <div class="descriptionmobile hidden" id="uniforms-desc-mobile">"The Ideal President"<br><br>photography, uniforms, props 2026</div>
-<div class="description hidden" id="uniforms-desc">"The Ideal President"<br><br>By the year 2026 Crayola should have been in charge of the state uniforms, nurses should've been using Heineken to make you better and cops should have had rayguns. Alternative uniforms for an ideal reality.<br><br>photography, uniforms, props 2026</div>
-
-<!-- <br><br>"<a class="credit" href="https://ameliasuor.cargo.site">Amelia Suor</a>" -->
+<div class="description hidden" id="uniforms-desc">"The Ideal President"<br><br>By the year 2026 Crayola should have been in charge of the state uniforms, nurses should've been using Heineken to make you better and cops should have had rayguns. Alternative uniforms for an ideal reality. <br><br>photography, uniforms, props 2026</div>
 
         <div class="flex-parent">
             
@@ -580,29 +574,20 @@ let activeDesc = null;
 let isExpanded = false;
 let startY = 0;
 
-function syncExpansionState() {
-  descriptions.forEach(desc => {
-    if (isExpanded) {
-      desc.classList.add('expanded');
-    } else {
-      desc.classList.remove('expanded');
-    }
-  });
-}
-
 function clearActiveButtons() {
   buttons.forEach(btn => btn.classList.remove('active-button'));
 }
 
 // Sync the expansion state across all descriptions
+// Sync the expansion state ONLY to the currently active description
 function syncExpansionState() {
   descriptions.forEach(desc => {
-    if (isExpanded) {
-      desc.classList.add('expanded');
-    } else {
-      desc.classList.remove('expanded');
-    }
+    desc.classList.remove('expanded');
   });
+  
+  if (isExpanded && activeDesc) {
+    activeDesc.classList.add('expanded');
+  }
 }
 
 // Handles main button/tab switching
@@ -638,8 +623,20 @@ buttons.forEach(button => {
     activeIframe = targetIframe;
     activeDesc = targetDesc;
 
+    // Temporarily disable transition if expanded to avoid pop/slide animation on switch
+    if (isExpanded && targetDesc) {
+      targetDesc.style.transition = 'none';
+    }
+
     // Preserve mobile expansion state across projects
     syncExpansionState();
+
+    // Re-enable the transition on the next frame
+    if (isExpanded && targetDesc) {
+      requestAnimationFrame(() => {
+        targetDesc.style.transition = '';
+      });
+    }
   });
 });
 
@@ -668,14 +665,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
-
-// Prevent touch scrolling inside the description from bubbling up to the main page window
-descriptions.forEach(desc => {
-  desc.addEventListener('touchmove', (e) => {
-    // If text is scrollable, keep scrolling isolated to the description box
-    e.stopPropagation();
-  }, { passive: true });
 });
     </script>
 
