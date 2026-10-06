@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>David Mihai</title>
+<link rel="icon" type="image/png" href="favicon-test.png">
+        
+<style>
+        @keyframes fade-in{
+            0%{
+            opacity: 0;
+            }
+            100%{
+            opacity: 1;
+            }
+          }
+          @keyframes blink{
+            0%{color: black;}
+            50%{color: rgb(180, 180, 180);}
+            100%{color: black;}
+          }
+
+        @keyframes opacity{
+            0%{opacity: 0%;}
+            100%{opacity: 100%;}}
+
+        @keyframes loader{
+            0%{
+                opacity: 100%;
+            }
+            90%{
+              opacity: 100%;
+            }
+            100%{
+                opacity: 0%;
+                }
+              }
+      /* :root {
+      color-scheme: light dark;
+      } */
+    html {
+    /* color-scheme: light dark; */
+    animation: opacity 0.6s ease-in-out;       
+    /* background-color: light-dark(whitesmoke, rgb(27, 27, 27));  */
+    /* background-color: red; */
+    }
+    *{
+    box-sizing: border-box;
+    }
+    body{
+    /* color-scheme: light dark; */
+    background-color: whitesmoke;
+    /* background-color: light-dark(whitesmoke, rgb(22, 22, 22)); */
+    /* height: 120vh; */
+    /* height: auto; */
+    min-height: 100vh;
+    font-family: monospace;
+    /* cursor: url('./cross4.png') 52 52, auto; */
+    }
+    /* .background{
+    min-height: 97vh;
+    } */
+    .flex-parent {
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 0%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    top:0%;
+    left: 0;
+    z-index: 10;
+    background-color: transparent;
+    justify-content: flex-start;
+    align-items: center;
+    transition: background-color 0.5s ease-in-out;
+    }
+    .flex-parent-2 {
+    margin-top: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 0%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    top:0%;
+    left: 0;
+    background-color: transparent;
+    z-index: 11;
+    justify-content: space-between;
+    align-items: center;
+    }
+    /* .itakemorespace {
+    background-color:blue;
+    color: white;
+    padding-left: 8vh;
+    padding-right: 8vh;
+    transition: background-color 0.5s ease-in-out, color 1s ease-in-out, padding 0.5s ease-in-out;    
+    } */
+    /* .itakemorespace:hover {
+    background-color: rgb(158, 207, 223);
+    } */
+    .itakelessspace {
+    -webkit-user-select: none;
+    /* cursor: pointer; */
+    display:flex;
+    margin-right: 1%;
+    flex-direction: row;
+    text-align: center;
+    background-color:white;
+    /* color: light-dark(black, rgb(221, 221, 221)); */
+    /* background-color: light-dark(white, black); */
+    transition: background-color 0.5s ease-in-out;
+    }
+    .lightgreen{
+    background-color: lightgreen;
+    }
+    .lightyellow{
+    background-color: #FFFFCC;
+    }
+    .pink {
+    background-color: #FFAACC;
+    }
+    .purple{
+    background-color: rgb(227, 130, 224);
+    }
+    .lightpurple{
+    background-color: #F28FE6;
+    }
+    .lightblue{
+    background-color: rgb(158, 207, 223);
+    }
+    .yellow{
+    background-color: #ffff99;
+    }
+    .white{
+    background-color: white;
+    }
+    .orange{
+    background-color: rgb(255, 185, 56);
+    }
+    .itakelessspace:hover {
+    background-color: rgb(158, 207, 223);
+    color:black;
+    transition: background-color 1s;
+    }
+    .itakelessspace a{
+    color:black;
+    transition: color 1s;
+    }
+    .itakelessspace a:hover{
+    color:black;
+    }
+    .itakemorespace a{
+    color: white;
+    transition: color 1s;
+    }
+    .itakemorespace a:hover{
+    color:black;
+    }
+    a:link,
+    a:visited {
+    text-decoration: none;
+    }
+    a.active {
+    background-color: rgb(158, 207, 223);
+    color: black;
+    transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+    }
+    .wave-text {
+    /* background-color: white; */
+    /* color:cornflowerblue; */
+    color:azure;
+    margin-top: 250px;
+    margin-right: 800px;
+    margin-bottom: 50%;
+    margin-left: 650px;
+    transform: skew(0deg, 0deg);
+    line-height: 100%;
+    position: absolute;
+    animation: skew 5s ease-in-out infinite, margin-top 4s ease-in-out;
+    transition: background-color 1s ease-in-out, color 1s ease-in-out, line-height 1s ease-in-out;
+    }
+    .itakelessspace2 {
+    /* color: light-dark(black, rgb(221, 221, 221)); */
+    /* background-color: light-dark(white, black); */
+    -webkit-user-select: none;
+    cursor: pointer;
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    padding-left: 0%;
+    padding-right: 0%;
+    transition: background-color 0.5s ease-in-out, padding 1s ease-in-out, font-size 0.5s ease-in-out,
+    color 1s ease-in-out;
+    }
+    .itakelessspace2.active-button {
+  background-color: rgb(158, 207, 223);
+  color: black;
+}
+    .itakelessspace2:hover {
+    cursor: pointer;
+    /* background-color: lightblue; */
+    /* color:black; */
+    /* font-size: 14px; */
+    /* padding-left: 1%; */
+    /* padding-right: 1%; */
+    }
+    .active-button{
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    /* background-color: green; */
+    /* background-color: lightblue; */
+    /* background-color: white; */
+    /* color: white; */
+    }
+
+    /* PROBLEM */
+    /* .itakelessspace2 a:active { 
+    background-color: red;
+    padding-left: 1%;
+    padding-right: 1%;
+     } */
+
+    .itakelessspace2 a{
+    color:black;
+    transition: color 1s;
+    }
+      
+    .itakelessspace2 a:hover{
+    color:black;
+    }
+    .iframe{
+    position: fixed;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    /* z-index: 999; */
+    overflow-y: auto;
+    }
+    #blinds{
+    /* background-color: black; */
+    }
+    .hidden {
+    opacity: 0;
+    display: none;
+    /* filter: blur(40px); */
+    /* visibility: hidden; */
+    /* transition: opacity 1s ease-in-out, filter 5s ease-in-out; */
+    }
+    /* .iframe:not (.hidden){
+    opacity: 50%;
+     } */
+    .td, th {
+    display: table-cell;
+    }
+    .opacityanimation{
+     animation: opacity 0.5s ease-in-out;
+    }
+    /* 
+    .active-button{
+    padding-left: 10%;
+    padding-right: 10%;
+    } */
+    /* .itakelessspace2{
+    padding-top: 1px;
+    padding-bottom: 1px;
+    } */
+    
+    .footer {
+    position: fixed;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    /* background-color: white; */
+    text-align: left;
+    transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 10pt;
+    }
+    .loader{
+    position: fixed;
+    display: block;
+    width: 20%;
+    height: 20%;
+    top: 50%;
+    left: 50%;
+    z-index: 13;
+    animation: loader 1s ease-in-out forwards;
+    pointer-events: none;
+    transform: translatex(-50%) translateY(-90%);  
+    }
+    .loader img{
+    width: 100%;
+    height: auto;
+    }
+    .loader video{
+    width: 100%;
+    height: auto;
+    }
+    .white-background{
+    position: fixed;
+    display: block;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    pointer-events: none;
+    animation: loader 1.3s ease-in-out forwards;
+    }
+    .p{
+    display: inline-block;
+    white-space: pre-wrap;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    .description{
+    position: fixed;
+    display: inline-block;
+    width: 28%;
+    bottom: 3vh;
+    left: 2%;
+    line-height: 1.4;
+    font-size: 8pt;
+    z-index: 12;
+    white-space: pre-wrap;
+    }
+.descriptionmobile{
+  position: fixed;
+    display: inline-block;
+    width: 28%;
+    bottom: 3vh;
+    left: 2%;
+    line-height: 1.4;
+    font-size: 8pt;
+    z-index: 12;
+    white-space: pre-wrap;
+    display: none;
+}
+  /* @media (max-width: 800px) {
+    .iframe {
+    width: 200vw;
+    min-height: 110vh;
+    left: 0;
+    transform: translatex(-25%);
+    }
+    .flex-parent{
+    width: 100%;
+    font-size: 10pt;
+    }
+    .flex-parent-2{
+    width: 100%;
+    padding-top: 2vh;
+    font-size: 10pt;
+    }
+    .itakelessspace{
+    background-color: transparent;
+    }
+    .itakelessspace2{
+    background-color: transparent;
+    }
+    .description{
+    position: fixed;
+    font-size: 7pt;
+    width: 96%;
+    bottom: 10px;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    display: none;
+    }
+  .descriptionmobile:not(.hidden) {
+    position: fixed;
+    display: inline-block;
+    width: 90%;
+    bottom: 3vh;
+    left: 2%;
+    line-height: 1.4;
+    font-size: 8pt;
+    z-index: 12;
+    white-space: pre-wrap;
+    pointer-events: auto;
+}
+} */
+@media (max-width: 800px) {
+  
+.iframe {
+    width: 200vw;
+    min-height: 110vh;
+    left: 0;
+    transform: translatex(-25%);
+    /* z-index: 100; */
+    /* margin-top: 25%; */
+    /* top: -10vh; */
+    }
+    .flex-parent{
+    width: 100%;
+    font-size: 10pt;
+    }
+
+    .itakelessspace{
+    background-color: transparent;
+    }
+    .itakelessspace2{
+    background-color: transparent;
+    }
+  .flex-parent-2 {
+    top: 50px !important;
+    margin-top: 0 !important;
+  }
+
+  .descriptionmobile {
+    display: none !important;
+  }
+
+  /* Pinned bottom panel */
+  .description {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 2%;
+    width: 96%;
+    max-height: 70vh;
+    font-size: 8pt;
+    z-index: 20;
+    white-space: pre-wrap;
+    padding: 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    transform: translateY(calc(100% - 40px));
+    transition: transform 0.6s ease-in-out;
+    animation: blink 5.5s ease-in-out infinite;
+  }
+
+  /* Expanded state styling */
+  .description.expanded {
+    transform: translateY(0) !important;
+    animation: none;
+  }
+
+}
+  </style>
+  </head>
+<body>
+        <!-- <audio id="sound"><source src="paper-scrunch.m4a" type="audio/mp4"></audio> -->
+        <!-- <div class="loader"><img src="david-icon.png"></div> -->
+        <!-- <div class="loader"><video class="video" autoplay  muted><source src="favicon-gif.mov" type="video/mp4"></video></div> -->
+        <!-- <div class="white-background"></div> -->
+<div class="descriptionmobile hidden" id="orange-desc-mobile">"On the Balcony of Orange Street"<br><br>book design, 2024</div>
+<div class="description hidden" id="orange-desc">"On the Balcony of Orange Street"<br><br>This two part book is my attempt at telling the story of the lost and found photographs of a dutch engineer in Suriname. The book invites the readers to take in the period scenery before slowly revealing the village where it all took place. Originally captured in the 1900s, the photographs have been collected from the Rijks Museum archive and repurposed into this book.<br><br>book design, 2024</div>
+
+<div class="descriptionmobile hidden" id="onion-desc-mobile">"Onion Creek, Austin, Texas"<br><br>book design, 2025</div>
+<div class="description hidden" id="onion-desc">"Onion Creek, Austin, Texas"<br><br>If you moved to Onion Creek, Austin, Texas, today, and lived there for the rest of your life, would you be certain to say, on your death bed, that your neighbour 5 streets down changed his bathroom sink in 2019? If you owned this book, you would. Using very specific data from the city of Austin, Texas, this book is a collection of entries made to give readers a unique and personal view of a neighbourhood in the United States.<br><br>book design, 2025</div>
+
+<div class="descriptionmobile hidden" id="poetry-desc-mobile">"Needs Translation"<br><br>magazine design, 2025</div>
+<div class="description hidden" id="poetry-desc">"Needs Translation"<br><br>Printed adaptation of the online Poetry Magazine issue of April 2024. Designed using additional layers of see through paper, they allow the viewer to read multiple spreads at the same time. The layout combines original poems with their translated versions and imagery.<br><br>magazine design, 2025</div>
+
+<div class="description hidden" id="ctd-desc">"Risk Assessment"<br><br>Collection of separate stories, bound into one book, ordered by someone on the verge of death.<br><br>book design, 2026</div>
+
+<div class="descriptionmobile hidden" id="withoutatrace-desc-mobile">"Without a Trace"<br><br>book design, 2023</div>
+<div class="description hidden" id="withoutatrace-desc">"Without a Trace"<br><br>Re-print of the discontinued "How to disappear in China without a trace" book by Susanne Bürner. This adaptation puts a spin on the function of the book. The pages have been perforated to allow the evader to rip them out one by one. Designed together with Jonas Rimersma.<br><br>book design, 2023</div>
+
+<div class="description hidden" id="hands-desc">"Welcome Gesture"<br><br>Series of hands holding tools, as guides for finding workshops.<br><br>wayfinding, 2025</div>
+
+<!-- <div class="description hidden" id="interrobang-desc">"Interrobang Posters"<br><br>When was the last time you used the interrobang in written form? Never‽ This poster series has been designed to promote the use of this neglected, cool character. !+?=‽<br><br>poster series, 2024</div> -->
+<div class="descriptionmobile hidden" id="cutout-desc-mobile">"My Mistake"<br><br>photography & print, 2025</div>
+<div class="description hidden" id="cutout-desc">"My Mistake"<br><br>photography & print, 2025</div>
+
+<div class="description hidden" id="flagpoetry-desc">"Flag Type"<br><br>Who said text has to be static? This illustration of poetry found on the web combines type with coding.<br><br>web coding, 2024</div>
+
+<div class="description hidden" id="titlegenerator-desc">"Title Generator"<br><br>Sometimes all you need to come up with a good idea is to jumble what you already have. Name generator for a project.<br><br>web coding, 2025</div>
+
+<div class="description hidden" id="blinds-desc">"40x1600"<br><br>What could be done with a video format of 40x1600px? Storytelling experiment.<br><br>student film, 2024</div>
+
+<div class="descriptionmobile hidden" id="howtomeoriginal-desc-mobile">"How to Me Original"<br><br>student film, 2025</div>
+<div class="description hidden" id="howtomeoriginal-desc">"How to Me Original"<br><br>Are our day to day lives as unique as we think they are, or has everything already played out before?<br><br>student film, 2025</div>
+
+<div class="descriptionmobile hidden" id="smoking-desc-mobile">"Fortune Smoking"<br><br>prop, book design, 2026</div>
+<div class="description hidden" id="smoking-desc">"Fortune Smoking"<br><br>They've been cracking down on smoking for too long. First they raised the prices, then they started with the warnings.<br>Why not make it cool again? 
+<br>Fortune cigarettes to bring back your confidence.<br><br>prop, book design, 2026</div>
+<!-- What does the Brit look like on vacation? How does the Brit see the world on vacation? What do we see the US like? -->
+ <div class="descriptionmobile hidden" id="sill-desc-mobile">"Quintessential Brit"<br><br>photography & installation, 2026</div>
+<div class="description hidden" id="sill-desc">"Quintessential Brit"<br><br>You see a British guy in Spain holding a beer, sunburnt and with a grin on his face. You feel the urge to look away, but maybe you just don't get it. Looking in you think it's clear, but from where he's sitting, it's a different view. Chicks, Jet Skis, sun and fun. Is the cliche on him or is the cliche on you?<br><br>photography & installation, 2026</div>
+<!-- How can I emancipate myself from the burden of the car industry regulations in Europoe that have made living in the 2020s more difficult than in the 1960s? -->
+<div class="descriptionmobile hidden" id="cart-desc-mobile">"Modern Shopper"<br><br>sculpture, 2026</div>
+<div class="description hidden" id="cart-desc">"Modern Shopper"<br><br>We were supposed to have flying cars by the 2000s, and we still don't have them in 2026. New cars don't even come with V8s anymore. I won't be getting one anytime soon. After all, nobody ever made conversation starting with "My Fiat Panda"<br><br>sculpture, 2026</div>
+
+
+<div class="descriptionmobile hidden" id="construction-desc-mobile">"Under Construction"<br><br>paint on plywood, 122cm x 81cm, 2026</div>
+<div class="description hidden" id="construction-desc">"Under Construction"<br><br>Construction tape wrapped around a fence on a clear sunny day.<br><br>paint on plywood, 122cm x 81cm, 2026</div>
+
+<div class="descriptionmobile hidden" id="boombox-desc-mobile">"Boombox Introspective"<br><br>sculpture, 2026</div>
+<div class="description hidden" id="boombox-desc">"Boombox Introspective"<br><br>There is no better way to change the atmosphere than setting down a Boombox. What's more characteristic of 21st century ingenuity than making your own devices out of discarded equipment? Duchamp started in 1913 and with so much junk still around, making readymades is still relevant today. Mass production hasn't provided us with the endless supply of futuristic products we were promised and yet, this abundance of junk offers unlimited inspiration. A speaker like this could've been built decades ago, and it's still better than anything on AliExpress. But would it have?<br><br>sculpture, 2026</div>
+
+<div class="descriptionmobile hidden" id="uniforms-desc-mobile">"The Ideal President"<br><br>photography, uniforms, props 2026</div>
+<div class="description hidden" id="uniforms-desc">"The Ideal President"<br><br>By the year 2026 Crayola should have been in charge of the state uniforms, nurses should've been using Heineken to make you better and cops should have had rayguns. Alternative uniforms for an ideal reality. <br><br>photography, uniforms, props 2026</div>
+
+        <div class="flex-parent">
+            
+            <div class="itakelessspace"><a href="index.html">Home</a></div>
+            <div class="itakelessspace"><a href="works.html" class="active">Works</a></div>
+            <div class="itakelessspace"><a href="about.html">About</a></div>
+            <!-- <div class="itakelessspace"><a href="">index</a></div> -->
+        </div>
+    
+        <div class="flex-parent-2">
+            <div class="itakelessspace2 white lightblue" data-target="uniforms">The Ideal President</div>
+            <div class="itakelessspace2 white lightblue" data-target="cart">Modern Shopper</div>
+            <div class="itakelessspace2 white lightblue" data-target="smoking">Fortune Smoking</div>
+            <div class="itakelessspace2 white lightblue" data-target="boombox">Boombox Introspective</div>
+            <div class="itakelessspace2 white lightblue" data-target="construction">Under Construction</div>
+            <div class="itakelessspace2 white lightblue" data-target="sill">Quintessential Brit</div>
+            <!-- <div class="itakelessspace2 white lightblue" data-target="orange">Orange Street</div> -->
+            <!-- <div class="itakelessspace2 white lightblue" data-target="onion">Onion Creek</div> -->
+            <!-- <div class="itakelessspace2 white lightblue" data-target="poetry">Needs Translation</div> -->
+            <!-- <div class="itakelessspace2 white lightblue" data-target="withoutatrace">Without a Trace</div> -->
+            <!-- <div class="itakelessspace2 white lightblue" data-target="hands">Welcome Gesture</div> -->
+            <div class="itakelessspace2 white lightblue" data-target="cutout">My Mistake</div>
+
+            
+        </div>
+        <iframe id="sill" class="iframe hidden"  src="sill.html" scrolling="yes"></iframe>
+        <iframe id="uniforms" class="iframe hidden"  src="uniforms.html" scrolling="yes"></iframe>
+        <iframe id="construction" class="iframe hidden"  src="underconstruction.html" scrolling="yes"></iframe>
+        <iframe id="cart" class="iframe hidden"  src="cart.html" scrolling="yes"></iframe>
+        <iframe id="boombox" class="iframe hidden"  src="boombox.html" scrolling="yes"></iframe>
+        <iframe id="smoking" class="iframe hidden"  src="smoking.html" scrolling="yes"></iframe>
+        <iframe id="onion" class="iframe hidden"  src="onion-creek.html" scrolling="yes"></iframe>
+        <iframe id="orange" class="iframe hidden" src="orange-street.html" scrolling="yes"></iframe>
+        <iframe id="poetry" class="iframe hidden" src="poetry-book.html" scrolling="yes"></iframe>
+        <!-- <iframe id="hands" class="iframe hidden" src="hands.html" scrolling="yes"></iframe> -->
+        <iframe id="cutout" class="iframe hidden" src="cutout.html" scrolling="yes"></iframe>
+        <iframe id="withoutatrace" class="iframe hidden" src="withoutatrace.html" scrolling="yes"></iframe>
+
+      <div class="footer">
+      <!-- <p class="p">© 2026</p> -->
+      </div>
+
+    <script>
+
+const buttons = document.querySelectorAll('[data-target]');
+const iframes = document.querySelectorAll('.iframe');
+const descriptions = document.querySelectorAll('.description');
+
+let activeIframe = null;
+let activeDesc = null;
+let isExpanded = false;
+let startY = 0;
+
+function clearActiveButtons() {
+  buttons.forEach(btn => btn.classList.remove('active-button'));
+}
+
+// Sync the expansion state across all descriptions
+// Sync the expansion state ONLY to the currently active description
+function syncExpansionState() {
+  descriptions.forEach(desc => {
+    desc.classList.remove('expanded');
+  });
+  
+  if (isExpanded && activeDesc) {
+    activeDesc.classList.add('expanded');
+  }
+}
+
+// Handles main button/tab switching
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.dataset.target;
+    const targetIframe = document.getElementById(targetId);
+    const targetDesc = document.getElementById(targetId + '-desc');
+
+    // Toggle off active tab if clicked again
+    if (activeIframe === targetIframe) {
+      targetIframe.classList.add('hidden');
+      targetIframe.classList.remove('opacityanimation');
+      if (targetDesc) targetDesc.classList.add('hidden');
+      activeIframe = null;
+      activeDesc = null;
+      clearActiveButtons();
+      return;
+    }
+
+    // Hide all frames and descriptions
+    iframes.forEach(frame => frame.classList.add('hidden'));
+    descriptions.forEach(d => d.classList.add('hidden'));
+
+    clearActiveButtons();
+
+    // Reveal selected tab elements
+    targetIframe.classList.remove('hidden');
+    targetIframe.classList.add('opacityanimation');
+    if (targetDesc) targetDesc.classList.remove('hidden');
+
+    button.classList.add('active-button');
+    activeIframe = targetIframe;
+    activeDesc = targetDesc;
+
+    // Temporarily disable transition if expanded to avoid pop/slide animation on switch
+    if (isExpanded && targetDesc) {
+      targetDesc.style.transition = 'none';
+    }
+
+    // Preserve mobile expansion state across projects
+    syncExpansionState();
+
+    // Re-enable the transition on the next frame
+    if (isExpanded && targetDesc) {
+      requestAnimationFrame(() => {
+        targetDesc.style.transition = '';
+      });
+    }
+  });
+});
+
+// Click fallback for desktop and touch tap detection for mobile
+document.body.addEventListener('click', (e) => {
+  if (window.innerWidth <= 800) {
+    const desc = e.target.closest('.description');
+    if (desc) {
+      isExpanded = !isExpanded;
+      syncExpansionState();
+    }
+  }
+});
+
+// Load first project by default
+if (buttons.length > 0) {
+  buttons[0].click();
+}
+
+// Idle lazy loading for remaining dynamic iframes
+window.addEventListener('DOMContentLoaded', () => {
+  requestIdleCallback(() => {
+    iframes.forEach(frame => {
+      if (!frame.src && frame.dataset.src) {
+        frame.src = frame.dataset.src;
+      }
+    });
+  });
+});
+    </script>
+
+</body>
+</html>

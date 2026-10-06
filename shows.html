@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>David Mihai</title>
+<link rel="icon" type="image/png" href="favicon-test.png">
+        
+<style>
+     @keyframes blink{
+            0%{color: black;}
+            50%{color: rgb(180, 180, 180);}
+            100%{color: black;}
+          }
+        @keyframes fade-in{
+            0%{
+            opacity: 0;
+            }
+            100%{
+            opacity: 1;
+            }
+          }
+        @keyframes opacity{
+            0%{opacity: 0%;}
+            100%{opacity: 100%;}}
+
+        @keyframes loader{
+            0%{
+                opacity: 100%;
+            }
+            90%{
+              opacity: 100%;
+            }
+            100%{
+                opacity: 0%;
+                }
+              }
+    html {
+    animation: opacity 0.6s ease-in-out;       
+    }
+    *{
+    box-sizing: border-box;
+    }
+    body{
+    background-color: whitesmoke;
+    min-height: 100vh;
+    font-family: monospace;
+    }
+    .flex-parent {
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 0%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    top:0%;
+    left: 0;
+    z-index: 10;
+    background-color: transparent;
+    justify-content: flex-start;
+    align-items: center;
+    transition: background-color 0.5s ease-in-out;
+    }
+    .flex-parent-2 {
+    margin-top: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 0%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    top:0%;
+    left: 0;
+    background-color: transparent;
+    z-index: 11;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .itakelessspace {
+    -webkit-user-select: none;
+    display:flex;
+    margin-right: 1%;
+    flex-direction: row;
+    text-align: center;
+    background-color:white;
+    transition: background-color 0.5s ease-in-out;
+    }
+    .itakelessspace:hover {
+    background-color: rgb(158, 207, 223);
+    color:black;
+    transition: background-color 1s;
+    }
+    .itakelessspace a{
+    color:black;
+    transition: color 1s;
+    }
+    .itakelessspace a:hover{
+    color:black;
+    }
+    .itakemorespace a{
+    color: white;
+    transition: color 1s;
+    }
+    .itakemorespace a:hover{
+    color:black;
+    }
+    a:link,
+    a:visited {
+    text-decoration: none;
+    }
+    a.active {
+    background-color: rgb(158, 207, 223);
+    color: black;
+    transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+    }
+    .itakelessspace2 {
+    -webkit-user-select: none;
+    cursor: pointer;
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    padding-left: 0%;
+    padding-right: 0%;
+    transition: background-color 0.5s ease-in-out, padding 1s ease-in-out, font-size 0.5s ease-in-out,
+    color 1s ease-in-out;
+    }
+    .itakelessspace2.active-button {
+  background-color: rgb(158, 207, 223);
+  color: black;
+}
+    .itakelessspace2:hover {
+    cursor: pointer;
+    }
+    .active-button{
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    }
+    .itakelessspace2 a{
+    color:black;
+    transition: color 1s;
+    }
+      
+    .itakelessspace2 a:hover{
+    color:black;
+    }
+    .iframe{
+    position: fixed;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    overflow-y: auto;
+    }
+    #blinds{
+    }
+    .hidden {
+    opacity: 0;
+    display: none;
+    }
+    .td, th {
+    display: table-cell;
+    }
+    .opacityanimation{
+     animation: opacity 0.5s ease-in-out;
+    }
+    .footer {
+    position: fixed;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    text-align: left;
+    transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 10pt;
+    }
+    .loader{
+    position: fixed;
+    display: block;
+    width: 20%;
+    height: 20%;
+    top: 50%;
+    left: 50%;
+    z-index: 13;
+    animation: loader 1s ease-in-out forwards;
+    pointer-events: none;
+    transform: translatex(-50%) translateY(-90%);  
+    }
+    .loader img{
+    width: 100%;
+    height: auto;
+    }
+    .loader video{
+    width: 100%;
+    height: auto;
+    }
+    .white-background{
+    position: fixed;
+    display: block;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    pointer-events: none;
+    animation: loader 1.3s ease-in-out forwards;
+    }
+    .p{
+    display: inline-block;
+    white-space: pre-wrap;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    .description{
+    position: fixed;
+    display: inline-block;
+    width: 28%;
+    bottom: 3vh;
+    left: 2%;
+    line-height: 1.4;
+    font-size: 8pt;
+    z-index: 12;
+    white-space: pre-wrap;
+    }
+.descriptionmobile{
+  position: fixed;
+    display: inline-block;
+    width: 28%;
+    bottom: 3vh;
+    left: 2%;
+    line-height: 1.4;
+    font-size: 8pt;
+    z-index: 12;
+    white-space: pre-wrap;
+    display: none;
+}
+ .credit{
+    color: rgb(81, 144, 165);
+    cursor: pointer;
+ }
+@media (max-width: 800px) {
+
+.iframe {
+    width: 200vw;
+    min-height: 110vh;
+    left: 0;
+    transform: translatex(-25%);
+    }
+    .flex-parent{
+    width: 100%;
+    font-size: 10pt;
+    }
+    .itakelessspace{
+    background-color: transparent;
+    }
+    .itakelessspace2{
+    background-color: transparent;
+    }
+  .flex-parent-2 {
+    top: 50px !important;
+    margin-top: 0 !important;
+  }
+  .descriptionmobile {
+    display: none !important;
+  }
+  .description {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 2%;
+    width: 96%;
+    max-height: 70vh;
+    font-size: 8pt;
+    z-index: 20;
+    white-space: pre-wrap;
+    padding: 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    transform: translateY(calc(100% - 40px));
+    transition: transform 0.6s ease-in-out;
+    animation: blink 5.5s ease-in-out infinite;
+  }
+  .description.expanded {
+    transform: translateY(0) !important;
+    animation: none;
+  }
+}
+  </style>
+  </head>
+<body>
+<div class="description hidden" id="americana-desc">"New Americana"<br><br>July 3 – July 8, 2027<br><br>Come taste the new“Heineken For Kids” formula at the ArtEZ auditorium. Public reveal at the “New Americana” art show. Opening at 5PM. The president will speak at 5:30.
+I repeat.
+Come taste our new “Heineken For Kids” formula at 5PM, at the ArtEZ auditorium.<br><br>Show, opening soon</div>
+
+        <div class="flex-parent">
+
+            <div class="itakelessspace"><a href="index.html">Home</a></div>
+            <div class="itakelessspace"><a href="works.html">Works</a></div>
+            <div class="itakelessspace"><a href="about.html">About</a></div>
+            <div class="itakelessspace"><a href="shows.html"class="active">Shows</a></div>
+        </div>
+    
+        <div class="flex-parent-2">
+            
+            <div class="itakelessspace2 white lightblue" data-target="americana">New Americana</div>
+
+            
+        </div>
+        
+        <iframe id="americana" class="iframe hidden" src="americana.html" scrolling="yes"></iframe>
+
+      <div class="footer">
+      <!-- <p class="p">© 2026</p> -->
+      </div>
+
+    <script>
+
+const buttons = document.querySelectorAll('[data-target]');
+const iframes = document.querySelectorAll('.iframe');
+const descriptions = document.querySelectorAll('.description');
+
+let activeIframe = null;
+let activeDesc = null;
+let isExpanded = false;
+let startY = 0;
+
+function clearActiveButtons() {
+  buttons.forEach(btn => btn.classList.remove('active-button'));
+}
+
+// Sync the expansion state across all descriptions
+// Sync the expansion state ONLY to the currently active description
+function syncExpansionState() {
+  descriptions.forEach(desc => {
+    desc.classList.remove('expanded');
+  });
+  
+  if (isExpanded && activeDesc) {
+    activeDesc.classList.add('expanded');
+  }
+}
+
+// Handles main button/tab switching
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.dataset.target;
+    const targetIframe = document.getElementById(targetId);
+    const targetDesc = document.getElementById(targetId + '-desc');
+
+    // Toggle off active tab if clicked again
+    if (activeIframe === targetIframe) {
+      targetIframe.classList.add('hidden');
+      targetIframe.classList.remove('opacityanimation');
+      if (targetDesc) targetDesc.classList.add('hidden');
+      activeIframe = null;
+      activeDesc = null;
+      clearActiveButtons();
+      return;
+    }
+
+    // Hide all frames and descriptions
+    iframes.forEach(frame => frame.classList.add('hidden'));
+    descriptions.forEach(d => d.classList.add('hidden'));
+
+    clearActiveButtons();
+
+    // Reveal selected tab elements
+    targetIframe.classList.remove('hidden');
+    targetIframe.classList.add('opacityanimation');
+    if (targetDesc) targetDesc.classList.remove('hidden');
+
+    button.classList.add('active-button');
+    activeIframe = targetIframe;
+    activeDesc = targetDesc;
+
+    // Temporarily disable transition if expanded to avoid pop/slide animation on switch
+    if (isExpanded && targetDesc) {
+      targetDesc.style.transition = 'none';
+    }
+
+    // Preserve mobile expansion state across projects
+    syncExpansionState();
+
+    // Re-enable the transition on the next frame
+    if (isExpanded && targetDesc) {
+      requestAnimationFrame(() => {
+        targetDesc.style.transition = '';
+      });
+    }
+  });
+});
+
+// Click fallback for desktop and touch tap detection for mobile
+document.body.addEventListener('click', (e) => {
+  if (window.innerWidth <= 800) {
+    const desc = e.target.closest('.description');
+    if (desc) {
+      isExpanded = !isExpanded;
+      syncExpansionState();
+    }
+  }
+});
+
+// Load first project by default
+if (buttons.length > 0) {
+  buttons[0].click();
+}
+
+// Idle lazy loading for remaining dynamic iframes
+window.addEventListener('DOMContentLoaded', () => {
+  requestIdleCallback(() => {
+    iframes.forEach(frame => {
+      if (!frame.src && frame.dataset.src) {
+        frame.src = frame.dataset.src;
+      }
+    });
+  });
+});
+    </script>
+
+</body>
+</html>
